@@ -31,9 +31,9 @@ const Hero = ({ className }) => {
   return (
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="lg:flex w-full lg:w-10/12 mx-auto h-auto lg:h-screen lg:min-h-[700px] items-center justify-between">
+        <div className="lg:flex w-full lg:w-12/12 mx-auto h-auto lg:h-screen lg:min-h-[700px] items-center justify-between">
            {/* Content left */}
-           <div className="lg:w-4/12 z-[3] relative">
+           <div className="lg:w-3/12 z-[3] relative">
               {heroContent.intro.subTitle && (
                 <motion.span
                   initial={{opacity: 0, y:20}}
@@ -91,16 +91,36 @@ const Hero = ({ className }) => {
                   <Link href={heroContent.intro.btn.href}
                     className="transistion-all duration-300 ease-in-out text-[11.5px]
                       tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
-                      rounded text-white inline-block hover:bg-white hover:text-orange-600">
+                      rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl">
                     {heroContent.intro.btn.label}
                   </Link>
                 </motion.btn>
               )}
             </div>
-           <div>
             {/* Image right */}
-           </div>
-         </div>
+            <div className="lg:w-7/12 relative">
+              <motion.div
+                initial={{ opacity: 0, x:20 }}
+                whileInView={{
+                  opacity:1,
+                  x:0,
+                  transition: {
+                    delai: 0.4,
+                    duration:0.5,
+                  }
+                }}
+                viewport={ { once: true}}
+                style={{y: imgScroll1}}
+                className="z-[2] relative bg-cover bg-center">
+                <Image src="/images/desktop.jpg" width={800} height={985} alt="hero image"/>
+              </motion.div>
+                <div className="absolute bottom-0 lg:bottom-[200px] -left-[100px] z-[1]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/dots.svg" alt="Dots background image" className="w-64" />
+                </div>
+
+            </div>
+          </div>
       </div>
     </section>
   )
