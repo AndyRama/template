@@ -29,11 +29,11 @@ const Hero = ({ className }) => {
   const imgScroll2 = useTransform(scrollYProgress, [0,1], ['100%', '50%'])
 
   return (
-    <section className={`${className}`} ref={ref}>
+    <section data-testId="hero-section" className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="lg:flex w-full lg:w-10/12 mx-auto h-auto lg:h-screen lg:min-h-[700px] items-center justify-between">
-           {/* Content left */}
-           <div className="lg:w-4/12 z-[3] relative">
+        <div className="lg:flex w-full lg:w-12/12 mx-auto h-auto lg:h-screen lg:min-h-[700px] items-center justify-between">
+           {/* Content left - subtitle */}
+           <div className="lg:w-3/12 z-[3] relative">
               {heroContent.intro.subTitle && (
                 <motion.span
                   initial={{opacity: 0, y:20}}
@@ -49,6 +49,8 @@ const Hero = ({ className }) => {
                 </motion.span>
               )}
 
+              {/* Content left - title */}
+
               {heroContent.intro.title && (
                 <motion.h1
                   initial={{opacity: 0, y:20}}
@@ -58,13 +60,15 @@ const Hero = ({ className }) => {
                     transition: { delay: 0.2, duration: 0.5 }
                   }}
                   viewport={{ once: true}}
+                  data-testid="hero-title"
                   className=" text-gray-800 text-3xl sm:text-4xl md:text-5xl lg:text-6xl w-auto lg:w-screen max-w-xl mb-4 md:mb-8">
                       { heroContent.intro.title }
                 </motion.h1>
               )}
 
+              {/* Content left - description */}
               {heroContent.intro.description && (
-                <motion.p
+                <motion.p data-testid="hero-description"
                   initial={{opacity: 0, y:20}}
                   whileInView ={ {
                     opacity:1,
@@ -72,11 +76,14 @@ const Hero = ({ className }) => {
                     transition: { delay: 0.2, duration: 0.5 }
                   }}
                   viewport={{ once: true}}
+
                   className="leading-relaxed text-gray-500 w-auto lg:w-screen max-w-xl
                     text-base lg:text-lg mb-10 lg:mb-16">
                       { heroContent.intro.description }
                 </motion.p>
               )}
+
+              {/* btn link */}
 
               {heroContent.intro.btn.label && (
                 <motion.btn
@@ -91,16 +98,50 @@ const Hero = ({ className }) => {
                   <Link href={heroContent.intro.btn.href}
                     className="transistion-all duration-300 ease-in-out text-[11.5px]
                       tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
-                      rounded text-white inline-block hover:bg-white hover:text-orange-600">
+                      rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl">
                     {heroContent.intro.btn.label}
                   </Link>
                 </motion.btn>
               )}
             </div>
-           <div>
+
             {/* Image right */}
-           </div>
-         </div>
+
+            <div className="lg:w-7/12 relative">
+              <motion.div
+                initial={{ opacity: 0, x:20 }}
+                whileInView={{
+                  opacity:1,
+                  x:0,
+                  transition: {
+                    delai: 0.4,
+                    duration:0.5,
+                  }
+                }}
+                viewport={ { once: true}}
+                style={{y: imgScroll1}}
+                className="z-[2] relative bg-cover bg-center">
+                <Image src="/images/desktop.jpg" width={800} height={985} alt="hero image"/>
+              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{
+                    opacity:1,
+                    x:0,
+                    transition: {
+                      delai: 0.4,
+                      duration:0.5,
+                    }
+                  }}
+                  viewport={ { once: true}}
+                  style={{y: imgScroll2}}
+                  className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/dots.svg" alt="Dots background image" className="w-64" />
+                </motion.div>
+
+            </div>
+          </div>
       </div>
     </section>
   )
