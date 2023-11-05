@@ -29,7 +29,7 @@ const Hero = ({ className }) => {
   const imgScroll2 = useTransform(scrollYProgress, [0,1], ['100%', '50%'])
 
   return (
-    <section data-testId="hero-section" className={`${className}`} ref={ref}>
+    <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
         <div className="lg:flex w-full lg:w-12/12 mx-auto h-auto lg:h-screen lg:min-h-[700px] items-center justify-between">
            {/* Content left - subtitle */}
@@ -68,7 +68,7 @@ const Hero = ({ className }) => {
 
               {/* Content left - description */}
               {heroContent.intro.description && (
-                <motion.p data-testid="hero-description"
+                <motion.p
                   initial={{opacity: 0, y:20}}
                   whileInView ={ {
                     opacity:1,
@@ -76,7 +76,6 @@ const Hero = ({ className }) => {
                     transition: { delay: 0.2, duration: 0.5 }
                   }}
                   viewport={{ once: true}}
-
                   className="leading-relaxed text-gray-500 w-auto lg:w-screen max-w-xl
                     text-base lg:text-lg mb-10 lg:mb-16">
                       { heroContent.intro.description }
@@ -94,11 +93,11 @@ const Hero = ({ className }) => {
                     transition: { delay: 0.2, duration: 0.5 }
                   }}
                   viewport={{ once: true}}
-                  >
+                >
                   <Link href={heroContent.intro.btn.href}
                     className="transistion-all duration-300 ease-in-out text-[11.5px]
                       tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
-                      rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl">
+                      rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl mb-5">
                     {heroContent.intro.btn.label}
                   </Link>
                 </motion.btn>
@@ -137,7 +136,8 @@ const Hero = ({ className }) => {
                   style={{y: imgScroll2}}
                   className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/dots.svg" alt="Dots background image" className="w-64" />
+                  {/* <img src="/images/dots.svg" alt="Dots background image" className="w-64" /> */}
+                  <Image src="/images/dots.svg" width={200} height={200} alt="Dots background image" className="w-64"/>
                 </motion.div>
 
             </div>
