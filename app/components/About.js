@@ -134,10 +134,9 @@ const About = ({ className }) => {
                 }}
                 viewport={ { once: true}}>
                 <Link href="/about" className="transistion-all duration-300 ease-in-out
-                 text-[11.5px] tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
-                 rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl mb-5">
-                {aboutContent.content.btn.label}
-
+                  text-[11.5px] tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
+                  rounded text-white inline-block hover:bg-white hover:text-orange-600 hover:shadow-2xl mb-5">
+                  {aboutContent.content.btn.label}
                 </Link>
 
 
