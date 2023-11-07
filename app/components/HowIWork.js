@@ -283,7 +283,6 @@ const HowIWork = ({ className }) => {
             </div>
           </div>
         </div>
-
       </section>
     </>
   )
