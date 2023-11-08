@@ -56,17 +56,21 @@ const Testimonial = ({ className }) => {
     setIsBeginning(sliderRef.current.swiper.isBeginning)
   }, [])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const prevHandler = useCallback(() => {
     if(!sliderRef.current) return
     sliderRef.current.swiper.slidePrev()
   })
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const nextHandler = useCallback(() => {
     if(!sliderRef.current) return
     sliderRef.current.swiper.slideNext()
   })
 
+  // error index
   const activeIndex = [1, 2, 3, 4]
+
   return (
     <section className={`${className} overflow-hidden`}>
       <div className="container px-4 mx-auto">
@@ -282,8 +286,7 @@ const Testimonial = ({ className }) => {
             transition: { delay: 0.9, duration: 0.5 },
           }}
           viewport={{ once: true }}
-          className="flex justify-center"
-        >
+          className="flex justify-center">
           <div className="flex space-x-3">
             <div
              onClick={prevHandler}
@@ -291,7 +294,7 @@ const Testimonial = ({ className }) => {
                 isBeginning == true
                   ? "opacity-30 bg-gray-300 text-gray-600 !cursor-pointer"
                   : " opacity-100 bg-orange-400 text-white"
-              } relativetop-0 group transition-all duration-300
+              } relative top-0 group transition-all duration-300
                 ease-in-out w-12 h-12 cursor-pointer rounded-full inline-flex justify-center items-center`}
                 >
               <BiChevronLeft
@@ -308,7 +311,7 @@ const Testimonial = ({ className }) => {
               isEnd == true
                   ? "opacity-30 bg-gray-300 text-gray-600 !cursor-pointer"
                   : " opacity-100 bg-orange-400 text-white"
-              } relativetop-0 group transition-all duration-300
+              } relative top-0 group transition-all duration-300
                 ease-in-out w-12 h-12 cursor-pointer rounded-full inline-flex justify-center items-center`}
             >
               <BiChevronRight
@@ -328,4 +331,3 @@ const Testimonial = ({ className }) => {
 };
 
 export default Testimonial;
-console.log(testimonialContent.testimonials.name);
