@@ -73,7 +73,7 @@ const About = ({ className }) => {
           <div className="lg:w-8/12 lg:flex gap-20 items-center">
             <div className="mb-7 lg:mb-0 lg:w-6/12 lg:order-2 relative">
               <motion.div style={{ y: img1 }}className="z-[2] relative">
-                <Image src="/images/hero-img-1-min.jpg" className="object-cover !w-full !h-[600] lg:max-w-2xl object-center" width={400} height={600} alt="About Image"/>
+                <Image  src="/images/hero-img-1-min.jpg" className="object-cover !w-full !h-[600] lg:max-w-2xl object-center" width={400} height={600} alt="About Image"/>
               </motion.div>
 
               <motion.div
