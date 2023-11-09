@@ -5,7 +5,7 @@ import Home from "@/app/page";
 
 describe("Home Component", () => {
   it("should render the Home component with the Hero component", () => {
-    const { container } = render(<Home />);
+    render(<Home />);
     const heroComponent = screen.getByText(/Creation & développement web par Lemurian Agency/i);
     expect(heroComponent).toBeInTheDocument();
   });
