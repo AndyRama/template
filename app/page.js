@@ -4,6 +4,7 @@ import HowIWork from "./components/HowIWork"
 import Testimonial from "./components/Testimonial"
 import RecentBlog from "./components/RecentBlog"
 import Image from "next/image"
+import Subscribe from "./components/Subscribe"
 export default function Home() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function Home() {
       <HowIWork className="py-16 !pt-32 lg:py-32"/>
       <Testimonial className="py-6 lg:py-32"/>
       <RecentBlog className="pt-14 pb-15 lg:pb-32"/>
+      <Subscribe className="py-16 pt-64 -mt-48 lg:py-32 bg-orange-300"/>
     </>
   )
 }
