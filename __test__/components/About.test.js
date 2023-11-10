@@ -49,8 +49,4 @@ describe('Component - About', () => {
     render(<About />);
     expect(screen.getByText(/Learn about me*/)).toBeInTheDocument();
   });
-
-
-
-
 });

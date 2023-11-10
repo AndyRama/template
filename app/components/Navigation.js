@@ -58,7 +58,7 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="flex">
-            <ul role="list" className="flex hidden md:flex space-x-8">
+            <ul role="list" className="hidden md:flex space-x-8">
               { navigationMenu.map((menu, index) => (
                 <li key={menu.label}>
                   <Link href={menu.href} className={`relative before:content-['']
