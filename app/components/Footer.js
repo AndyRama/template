@@ -93,58 +93,74 @@ const footerContent = {
   ],
 };
 
-const Footer = ({ className }) => {
+const Copyright = () => {
   return (
-    <footer className={`${className} overflow-hidden w-full h-full relative`}>
-      <div className="container mx-auto px-4 z-20 relative">
-        <div className="md:flex">
-          <div className="md:w-4/12 mb-10 md:mb-0">
-            <Link href="#" className="text-[22px] text-gray-800 font-bold">
-              Lemurian
-              <span className="text-orange-400">.</span>
-            </Link>
-          </div>
+    <div className="pt-7 mt-7 md:mt-14 md;pt-14 border-t border-t-gray-100 text-center text-gray-500">
+      <p className="Text-center items-center mx-auto text-sm">
+        &copy; 2023 {" "}
+        <Link href="/" className="text-orange-600">Lemurian Agency. </Link>
+        Allrights reserved. Created with { " "}
+        <BiSolidHeart className="text-red-500 mx-1 inline-block"/>
+        by {" "}
+        <Link href="/" className="text-orange-600">Andy Ramaroson</Link>
+      </p>
+    </div>
+    )
+  }
 
-          <div className="md:w-8/12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-              {footerContent.footerLinks.map((item, index) => (
-                <div className="mb-10 md:mb-0" key={item.heading}>
-                  <h3 className="text-gray-800 mb-3 ,n=3">{item.heading}</h3>
-                  <ul className="list-none">
-                    {item.links.map((link, index) => (
-                      <li className="mb-2" key={link.label}>
-                        <Link
-                          href={link.href}
-                          className={`${
-                            link.badge ? "flex gap-2 items-center" : ""
-                          }
-                           text-gray-500 duration-300 transistion-all ease-in-out hover:text-orange-400`}
-                        >
-                          {link.badge ? (
-                            <>
-                              <span>{link.label}</span>
-                              <span
-                                className="py-0.5 px-2 rounded-full bg-orange-100
-                                   border border-orange-600 text-[10px] text-orange-600
-                                  font-semibold"
-                              >
-                                {link.badge}
-                              </span>
-                            </>
-                          ) : (
-                            link.label
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+  const Footer = ({ className }) => {
+    return (
+      <footer className={`${className} overflow-hidden w-full h-full relative`}>
+        <div className="container mx-auto px-4 z-20 relative">
+          <div className="md:flex">
+            <div className="md:w-4/12 mb-10 md:mb-0">
+              <Link href="#" className="text-[22px] text-gray-800 font-bold">
+                Lemurian
+                <span className="text-orange-400">.</span>
+              </Link>
+            </div>
+
+            <div className="md:w-8/12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                {footerContent.footerLinks.map((item, index) => (
+                  <div className="mb-10 md:mb-0" key={item.heading}>
+                    <h3 className="text-gray-800 mb-3 ,n=3">{item.heading}</h3>
+                    <ul className="list-none">
+                      {item.links.map((link, index) => (
+                        <li className="mb-2" key={link.label}>
+                          <Link
+                            href={link.href}
+                            className={`${
+                              link.badge ? "flex gap-2 items-center" : ""
+                            }
+                            text-gray-500 duration-300 transistion-all ease-in-out hover:text-orange-400`}
+                          >
+                            {link.badge ? (
+                              <>
+                                <span>{link.label}</span>
+                                <span
+                                  className="py-0.5 px-2 rounded-full bg-orange-100
+                                    border border-orange-600 text-[10px] text-orange-600
+                                    font-semibold"
+                                >
+                                  {link.badge}
+                                </span>
+                              </>
+                            ) : (
+                              link.label
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+          < Copyright/>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 };
 
