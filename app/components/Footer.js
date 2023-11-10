@@ -1,0 +1,151 @@
+"use client";
+import React from "react";
+import { BiSolidHeart } from "react-icons/bi";
+import Link from "next/link";
+
+const footerContent = {
+  footerLinks: [
+    {
+      heading: "Product",
+      links: [
+        {
+          href: "#",
+          label: "Overviews",
+        },
+        {
+          href: "#",
+          label: "Solution",
+          badge: "New",
+        },
+        {
+          href: "#",
+          label: "Tutorials",
+        },
+        {
+          href: "#",
+          label: "Pricing",
+        },
+        {
+          href: "#",
+          label: "Releases",
+        },
+      ],
+    },
+    {
+      heading: "Company",
+      links: [
+        {
+          href: "#",
+          label: "About us",
+        },
+        {
+          href: "#",
+          label: "Leadership",
+        },
+        {
+          href: "#",
+          label: "Careers",
+          badge: "We're hiring",
+        },
+        {
+          href: "#",
+          label: "Press",
+        },
+        {
+          href: "#",
+          label: "Contact",
+        },
+        {
+          href: "#",
+          label: "Branding",
+        },
+      ],
+    },
+    {
+      heading: "Ressources",
+      links: [
+        {
+          href: "#",
+          label: "Blog",
+        },
+        {
+          href: "#",
+          label: "Events",
+        },
+        {
+          href: "#",
+          label: "Newsletter",
+        },
+        {
+          href: "#",
+          label: "Knowledge base",
+        },
+        {
+          href: "#",
+          label: "Support",
+        },
+        {
+          href: "#",
+          label: "Tutorials",
+        },
+      ],
+    },
+  ],
+};
+
+const Footer = ({ className }) => {
+  return (
+    <footer className={`${className} overflow-hidden w-full h-full relative`}>
+      <div className="container mx-auto px-4 z-20 relative">
+        <div className="md:flex">
+          <div className="md:w-4/12 mb-10 md:mb-0">
+            <Link href="#" className="text-[22px] text-gray-800 font-bold">
+              Lemurian
+              <span className="text-orange-400">.</span>
+            </Link>
+          </div>
+
+          <div className="md:w-8/12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+              {footerContent.footerLinks.map((item, index) => (
+                <div className="mb-10 md:mb-0" key={item.heading}>
+                  <h3 className="text-gray-800 mb-3 ,n=3">{item.heading}</h3>
+                  <ul className="list-none">
+                    {item.links.map((link, index) => (
+                      <li className="mb-2" key={link.label}>
+                        <Link
+                          href={link.href}
+                          className={`${
+                            link.badge ? "flex gap-2 items-center" : ""
+                          }
+                           text-gray-500 duration-300 transistion-all ease-in-out hover:text-orange-400`}
+                        >
+                          {link.badge ? (
+                            <>
+                              <span>{link.label}</span>
+                              <span
+                                className="py-0.5 px-2 rounded-full bg-orange-100
+                                   border border-orange-600 text-[10px] text-orange-600
+                                  font-semibold"
+                              >
+                                {link.badge}
+                              </span>
+                            </>
+                          ) : (
+                            link.label
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
