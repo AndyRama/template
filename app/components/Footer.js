@@ -99,7 +99,7 @@ const Copyright = () => {
       <p className="Text-center items-center mx-auto text-sm">
         &copy; 2023 {" "}
         <Link href="/" className="text-orange-600">Lemurian Agency. </Link>
-        Allrights reserved. Created with { " "}
+        All rights reserved. Created with { " "}
         <BiSolidHeart className="text-red-500 mx-1 inline-block"/>
         by {" "}
         <Link href="/" className="text-orange-600">Andy Ramaroson</Link>

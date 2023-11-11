@@ -4,7 +4,6 @@ import HowIWork from "./components/HowIWork"
 import Testimonial from "./components/Testimonial"
 import RecentBlog from "./components/RecentBlog"
 import Subscribe from "./components/Subscribe"
-import Footer from "./components/Footer"
 import Image from "next/image"
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <Testimonial className="py-6 lg:py-32"/>
       <RecentBlog className="pt-14 pb-15 lg:pb-32"/>
       <Subscribe className="py-16 pt-64 -mt-48 lg:py-32 bg-orange-300"/>
-      <Footer className="bg-white py-16 md:py-24"/>
     </>
   )
 }
