@@ -165,41 +165,49 @@ const Story = () => {
             })}
           </div>
         </div>
-        <div className="lg:flex flex-col mt-32 text-left w-full lg:w-6/12 mx-auto">
-        { storyContent.storyText.heading && (
-          <h2 className="text-2xl md:text-3xl text-gray-800 mb-5">
-            { storyContent.storyText.heading}
-          </h2>
-        )}
+        <motion.div
+          initial={{opacity: 0, y: 20}}
+          whileInView ={ {
+            opacity:1,
+            y:0,
+            transition: { delay: 0.3, duration: 0.5 }
+          }}
+          viewport={{ once: true}}
+          className="lg:flex flex-col mt-32 text-left w-full lg:w-6/12 mx-auto">
+          { storyContent.storyText.heading && (
+            <h2 className="text-2xl md:text-3xl text-gray-800 mb-5">
+              { storyContent.storyText.heading}
+            </h2>
+          )}
 
-        { storyContent.storyText.p1 && (
-          <p className="leading-relaxed text-gray-500 mb-7">
-           { storyContent.storyText.p1}
+          { storyContent.storyText.p1 && (
+            <p className="leading-relaxed text-gray-500 mb-7">
+            { storyContent.storyText.p1}
+            </p>
+          )}
+
+          { storyContent.storyText.p2 && (
+            <p className="leading-relaxed text-gray-500 mb-7">
+            { storyContent.storyText.p2}
+            </p>
+          )}
+
+          <p>
+            <Image
+              src={storyContent.storyText.signature}
+              alt={storyContent.storyText.name}
+              width={338}
+              height={113}
+              className='w-48 block mb-2'
+            />
+            <strong className='block mb-2 text-gray-800 font-medium'>
+            {storyContent.storyText.name + " "}
+              <span className='text-gray-400'>
+              {storyContent.storyText.roleTitle}
+              </span>
+            </strong>
           </p>
-        )}
-
-        { storyContent.storyText.p2 && (
-          <p className="leading-relaxed text-gray-500 mb-7">
-           { storyContent.storyText.p2}
-          </p>
-        )}
-
-        <p>
-          <Image
-            src={storyContent.storyText.signature}
-            alt={storyContent.storyText.name}
-            width={338}
-            height={113}
-            className='w-48 block mb-2'
-          />
-          <strong className='block mb-2 text-gray-800 font-medium'>
-           {storyContent.storyText.name + " "}
-             <span className='text-gray-400'>
-             {storyContent.storyText.roleTitle}
-             </span>
-          </strong>
-        </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

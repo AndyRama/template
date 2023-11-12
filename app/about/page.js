@@ -3,17 +3,21 @@ import Hero from '../components/about/Hero'
 import Story from '../components/about/Story'
 import Subscribe from '../components/Subscribe'
 import Testimonial from '../components/Testimonial'
+import WhyUs from '../components/about/WhyUs'
+import Team from '../components/about/Team'
 
 
-const page = () => {
+const aboutPage = () => {
   return (
-    <section>
+    <>
       <Hero className="pt-52 pb-24" />
       <Story/>
-      <Testimonial className="py-6 lg:py-32"/>
-      <Subscribe className="py-16 pt-24  lg:py-32 bg-orange-300"/>
-    </section>
+      <WhyUs className="pt-52 pb-0"/>
+      <Testimonial className="pt-10 lg:pt-44 pb-10 lg:pb-32"/>
+      <Team className="py-10 lg:py-32"/>
+      <Subscribe className="py-10 lg:py-32 bg-orange-300"/>
+    </>
   )
 }
 
-export default page
+export default aboutPage

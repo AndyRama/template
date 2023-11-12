@@ -88,7 +88,7 @@ const About = ({ className }) => {
                 }}
                 viewport={ { once: true}}
                 style={{ y: img2}}
-                className="absolute bottom-0 lg:bottom-[200px] -left-[100px] z-[1]">
+                className="absolute bottom-0 lg:bottom-[150px] -left-[100px] z-[-1]">
                 <Image src="/images/dots.svg" alt="Dots image" width={200} height={200} className="w-64"/>
               </motion.div>
             </div>
