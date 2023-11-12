@@ -67,6 +67,7 @@ const Hero = ({ className }) => {
               )}
 
               {/* Content left - description */}
+
               {heroContent.intro.description && (
                 <motion.p
                   initial={{opacity: 0, y:20}}
@@ -135,8 +136,6 @@ const Hero = ({ className }) => {
                   viewport={ { once: true}}
                   style={{y: imgScroll2}}
                   className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  {/* <img src="/images/dots.svg" alt="Dots background image" className="w-64" /> */}
                   <Image src="/images/dots.svg" width={200} height={200} alt="Dots background image" className="w-64"/>
                 </motion.div>
 

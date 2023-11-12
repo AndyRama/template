@@ -102,6 +102,7 @@ const HowIWorkContent = {
 const HowIWork = ({ className }) => {
   return (
     <>
+      {/* Content left - subtitle */}
       <section className={` ${className}`}>
         <div className='container px-4 mx-auto'>
           <div className='lg:flex justify-center mb-20 lg:mb-36'>
@@ -226,6 +227,7 @@ const HowIWork = ({ className }) => {
           </div>
         </div>
       </section>
+
       <section className="pt-64 lg:pt-60 pb-10 bg-orange-600">
         <div className='container px-4 mx-auto'>
           <div className="lg:flex justify-center">
