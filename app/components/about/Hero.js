@@ -39,6 +39,7 @@ const Hero = ({ className , title, subTitle}) => {
               </motion.span>
               )}
 
+              {/* Content cneter - title */}
               {title && (
                 <motion.h1
                   initial={{opacity: 0, y: 20}}

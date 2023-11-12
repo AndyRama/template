@@ -226,7 +226,7 @@ const HowIWork = ({ className }) => {
           </div>
         </div>
       </section>
-      <section className="pt-72 lg:pt-60 pb-3 bg-orange-600">
+      <section className="pt-64 lg:pt-60 pb-10 bg-orange-600">
         <div className='container px-4 mx-auto'>
           <div className="lg:flex justify-center">
             <div className='w-full lf:w-8/12 flex gap-0 items-center'>
