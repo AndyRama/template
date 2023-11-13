@@ -1,13 +1,13 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import Image from 'next/image'
 import { allProjects } from '@/.contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import ReactPaginate from "react-paginate"
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 
 
@@ -16,29 +16,29 @@ const Items = ({ currentItems }) => {
     <>
       { currentItems &&
         currentItems.map((project, index) => {
-          index *=0.05
+          index *= 0.05
           return (
             <motion.div
-            className='relative overflow-hidden w-full lg:w-6/12 p-2 group'
-            initial = {{ opacity: 0, y: 10 }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: 0.5,
-                duration:0.5,
-              }
-            }}
-            viewport={ { once: true}}
-            key={index}>
-              <Link href={project.url} className='overflow-hidden block relative'>
+              className='relative overflow-hidden w-full lg:w-6/12 p-2 group'
+              initial = {{ opacity: 0, y: 20 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: index,
+                  duration: 0.3,
+                }
+              }}
+              viewport={ { once: true}}
+              key={index}>
+              <Link href={project.url} className='overflow-hidden block relative rounded-t-md'>
                 <Image
                   src={project.image}
                   alt="Andyramaroson.com"
                   width={1064}
                   height={644}
                   className='object-cover object-center h-[400px] !max-w-full duration-300
-                    transition-all ease-in-out group-hover:scale-[1.05]'
+                    transition-all ease-in-out group-hover:scale-[1.05] '
                 />
               </Link>
               <div className="py-8 px-2">
@@ -72,7 +72,7 @@ const Projects  = ({ className, itemsPerPage }) => {
     setPageCount(Math.ceil(items.length / itemsPerPage))
 
     if(clickPaginate === true) {
-      ref.current?.scrollIntoView({ top:-5, behavior: "smooth"})
+      ref.current?.scrollIntoView({ top:-50, behavior: "smooth"})
       setClickPaginate(false)
     }
   }, [itemOffset, itemsPerPage, clickPaginate, items])
@@ -84,6 +84,7 @@ const Projects  = ({ className, itemsPerPage }) => {
   }
 
   if(!items) return null
+
   return (
     <section className={`${ className }`} ref={ref}>
       <div className="container px-4 mx-auto">
@@ -93,7 +94,7 @@ const Projects  = ({ className, itemsPerPage }) => {
 
         <div className="lg:w-10/12 mx-auto flex flex-wrap">
           <ReactPaginate
-            nextLabel="next"
+            nextLabel="Next"
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
             marginPagesDisplayed={2}
