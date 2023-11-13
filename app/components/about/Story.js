@@ -29,6 +29,7 @@ const storyContent = {
         width: 1188,
         height: 1413,
       },
+
     ]
   },
   column2: {
@@ -72,6 +73,7 @@ const storyContent = {
       },
     ]
   },
+
   storyText: {
     heading: "Crafting Spaces, Shaping Dreams",
     p1:"Envisioned by a group of passionate architects, our story is one of perseverance and boundless creativity. We started as a small team with big dreams, driven by the belief that architecture holds the power to shape lives and communities. Through years of dedication and unwavering commitment, we have evolved into a dynamic force, seamlessly blending aesthetics with functionality to create spaces that inspire and endure.",
@@ -86,8 +88,8 @@ const Story = () => {
   return (
     <section>
       <div className="container px-4 mx-auto">
-        <div className="md:flex w-full md:w-10/12 mx-auto items-stretch md:gap-7">
-          <div className="md:w-4/12 self-center space-y-7 mb-7 md:mb-0">
+        <div className="md:flex w-full md:w-10/12 mx-auto items-stretch md:gap-7 ">
+          <div className="md:w-4/12 self-center space-y-7 mb-7 md:mb-0 ">
             { storyContent.column1.imgs.map((item, index) => {
               index *= 0.5;
               return(
@@ -176,19 +178,19 @@ const Story = () => {
           className="lg:flex flex-col mt-32 text-left w-full lg:w-6/12 mx-auto">
           { storyContent.storyText.heading && (
             <h2 className="text-2xl md:text-3xl text-gray-800 mb-5">
-              { storyContent.storyText.heading}
+              { storyContent.storyText.heading }
             </h2>
           )}
 
           { storyContent.storyText.p1 && (
             <p className="leading-relaxed text-gray-500 mb-7">
-            { storyContent.storyText.p1}
+            { storyContent.storyText.p1 }
             </p>
           )}
 
           { storyContent.storyText.p2 && (
             <p className="leading-relaxed text-gray-500 mb-7">
-            { storyContent.storyText.p2}
+            { storyContent.storyText.p2 }
             </p>
           )}
 
