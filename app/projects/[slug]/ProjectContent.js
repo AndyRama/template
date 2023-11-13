@@ -16,9 +16,6 @@ const ProjectContent = ({project}) => {
 
   let MDXContent
 
-  // console.log(projects)
-  // console.log(project)
-
   if(!projects) return null
   if(!project) {
     console.log('Post not found');
