@@ -9,18 +9,18 @@ const PostCard = ({ project, index}) => {
   index *= 0.05
   return (
     <motion.div
-    initial = {{ opacity: 0, y: 20 }}
-    whileInView={{
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: index,
-        duration: 0.5,
-      }
-    }}
-    viewport={ { once: true}}
-    className={`relative overflow-hidden`}>
-      <Link href={project.url} className="relative block overflow-hidden group rounded-t-md">
+      initial = {{ opacity: 0, y: 20 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: index,
+          duration: 0.5,
+        }
+      }}
+      viewport={ { once: true}}
+      className={`relative overflow-hidden`}>
+      <Link href={project.url} className="relative block overflow-hidden group">
         <Image
           src={project.image}
           alt={project.title}

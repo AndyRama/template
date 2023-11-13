@@ -31,7 +31,7 @@ const Items = ({ currentItems }) => {
               }}
               viewport={ { once: true}}
               key={index}>
-              <Link href={project.url} className='overflow-hidden block relative rounded-t-md'>
+              <Link href={project.url} className='overflow-hidden block relative'>
                 <Image
                   src={project.image}
                   alt="Andyramaroson.com"

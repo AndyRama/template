@@ -14,7 +14,7 @@ const CTA = ({ className, title, description, cta_label, cta_link }) => {
             <p>
               <Link
                 href={cta_link}
-                className="transistion-all duration-300 ease-in-out inline-block
+                className="transition-all duration-300 ease-in-out inline-block
                   text-[11.5px] tracking-[2px] font-bold uppercase bg-[#fb9e25]
                   py-4 px-5 text-white hover:bg-white hover:text-orange-600
                   hover:shadow-2xl ">
