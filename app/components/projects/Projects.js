@@ -9,8 +9,6 @@ import ReactPaginate from "react-paginate"
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-
-
 const Items = ({ currentItems }) => {
   return (
     <>
