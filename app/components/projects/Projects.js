@@ -61,7 +61,7 @@ const Projects  = ({ className, itemsPerPage }) => {
   const [currentItems, setCurrentItems] = useState(null)
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
-  const [clickPaginate, setClickPaginate]= useState(false)
+  const [clickPaginate, setClickPaginate] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -100,10 +100,10 @@ const Projects  = ({ className, itemsPerPage }) => {
             previousLabel="Previous"
             pageClassName="page-item"
             pageLinkClassName="page-link"
-            previousClassName="page-item"
-            previousLinkClassName="page-link"
-            nextClassName="page-item"
-            nextLinkClassName="page-link"
+            // previousClassName="page-item"
+            // previousLinkClassName="page-link"
+            // nextClassName="page-item"
+            // nextLinkClassName="page-link"
             breakLabel="..."
             breakClassName="page-item"
             breakLinkClassName="page-link"
