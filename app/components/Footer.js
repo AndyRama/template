@@ -95,8 +95,8 @@ const footerContent = {
 
 const Copyright = () => {
   return (
-    <div className="pt-7 mt-7 md:mt-14 md;pt-14 border-t border-t-gray-100 text-center text-gray-500">
-      <p className="Text-center items-center mx-auto text-sm">
+    <div className="pt-7 mt-7 md:mt-14 md:pt-14 border-t border-t-gray-100 text-center text-gray-500">
+      <p className="text-center items-center mx-auto text-sm">
         &copy; 2023 {" "}
         <Link href="/" className="text-orange-600">Lemurian Agency. </Link>
         All rights reserved. Created with { " "}
@@ -133,7 +133,7 @@ const Copyright = () => {
                             className={`${
                               link.badge ? "flex gap-2 items-center" : ""
                             }
-                            text-gray-500 duration-300 transistion-all ease-in-out hover:text-orange-400`}
+                            text-gray-500 duration-300 transition-all ease-in-out hover:text-orange-400`}
                           >
                             {link.badge ? (
                               <>
