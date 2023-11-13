@@ -27,11 +27,11 @@ const PostCard = ({ project, index}) => {
           width={1064}
           height={644}
           className='object-cover object-center h-[400px] !max-w-full duration-300
-            transition-all ease-in-out group-hover:scale-[1.05]'
+            transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'
         />
       </Link>
 
-      <div className="py-8 px-2">
+      <div className="py-8 px-2 bg-white rounded-md">
         <span className='block mb-1 text-gray-500'>{ project.role }</span>
         <h3 className="mb-4">
           <Link href={project.url} className="text-2xl leading-none">

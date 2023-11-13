@@ -77,7 +77,7 @@ const WhyUs = ({ className }) => {
               <motion.div style={{ y: img1 }}>
                 <Image
                   src="/images/img-square-2-min.jpg"
-                  className='object-cover !w-full h-[500px] lg:max-w-2xl object-center'
+                  className='object-cover !w-full h-[490px] lg:max-w-2xl object-center rounded-md'
                   width={ 400 }
                   height= {300}
                   alt='Image'
@@ -85,7 +85,7 @@ const WhyUs = ({ className }) => {
               </motion.div>
             </div>
 
-            <div className="lg:w-6/12">
+            <div className="lg:w-6/12 mt-20 ">
               <motion.ul
                 initial={{opacity: 0, y: 10}}
                 whileInView ={ {

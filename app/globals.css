@@ -17,7 +17,7 @@
 }
 
 .pagination li.active a {
-  @apply bg-white shadow-2xl text-orange-600
+  @apply bg-white shadow-2xl text-orange-600;
 }
 
 .pagination li:first-child {
@@ -28,16 +28,13 @@
 }
 
 .pagination li:first-child a {
-  @apply w-auto px-3 md:px-5 rounded-none
+  @apply w-auto px-3 md:px-5 rounded-none;
 }
 
-/* .pagination li:last-child a {
-  @apply w-auto px-3 md:px-5 rounded-none
-} */
-
-
-
+.pagination li:last-child a {
+  @apply w-auto px-3 md:px-5 rounded-none;
+}
 
 .prose h1, h2, h3, h4 {
-  @apply !font-medium text-slate-900
+  @apply !font-medium text-slate-900;
 }

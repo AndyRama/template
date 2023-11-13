@@ -9,8 +9,6 @@ import ReactPaginate from "react-paginate"
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-
-
 const Items = ({ currentItems }) => {
   return (
     <>
@@ -19,7 +17,7 @@ const Items = ({ currentItems }) => {
           index *= 0.05
           return (
             <motion.div
-              className='relative overflow-hidden w-full lg:w-6/12 p-2 group'
+              className='relative overflow-hidden w-full lg:w-6/12 p-2 group '
               initial = {{ opacity: 0, y: 20 }}
               whileInView={{
                 opacity: 1,
@@ -41,8 +39,8 @@ const Items = ({ currentItems }) => {
                     transition-all ease-in-out group-hover:scale-[1.05] '
                 />
               </Link>
-              <div className="py-8 px-2">
-                <span className='block mb-1 text-gray-500'>{project.role}</span>
+              <div className="py-8 px-2 bg-white rounded-md">
+                <span className='block mb-1 text-gray-500 '>{project.role}</span>
                 <h3 className='mb-4'>
                   <Link href={project.url} className='text-2xl leading-none'>
                     {project.title}

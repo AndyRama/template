@@ -26,7 +26,7 @@ const PostCard = ({ index, post }) => {
         },
       }}
       viewport={{ once: true }}
-      className="bg-gray-100 relative overflow-hidden group rounded ">
+      className="bg-white relative overflow-hidden group rounded ">
       <Link href={post.url} className="relative block overflow-hidden">
         <Image src={post.image} alt={post.title} width={1064} height={644} className="object-cover object-center h-[200px] duration-300 transition-all ease-in-out group-hover:scale-[1.1]" />
       </Link>
@@ -85,7 +85,7 @@ const RecentBlog = ({ className }) => {
                     },
                   }}
                   viewport={{ once: true }}
-                  className="text-2xl lg:text-4xl mb-4 lg:mb-0">
+                  className="text-2xl lg:text-4xl mb-4 lg:mb-0 ">
                  { recentBlogContent.heading.title }
                 </motion.h2>
               )}
@@ -109,7 +109,7 @@ const RecentBlog = ({ className }) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full lg:w-10/12 mx-auto mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full lg:w-10/12 mx-auto mt-10 ">
           {posts.slice(0, 12).map((post, index) => (
             <PostCard key={index} index={ index} post={post}/>
           ))}
