@@ -19,7 +19,6 @@ const page = ({ params }) => {
       <BlogContent post={post}/>
     </>
   )
-
 }
 
 export default page;
