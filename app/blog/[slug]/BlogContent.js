@@ -7,7 +7,7 @@ import { compareDesc, format, parseISO } from 'date-fns';
 
 import { motion } from 'framer-motion'
 import { getMDXComponent } from 'next-contentlayer/hooks'
-import PostCard from '@/app/components/blog/PostCard';
+import PostCard from './../../components/blog/PostCard';
 
 function slugify(str) {
   return str
@@ -80,12 +80,13 @@ const BlogContent = ({post}) => {
       <div className="max-w-4xl mx-auto mt-20 lg:mt-32">
         <h2 className='text-2xl text-gray-700 mb-10'> More posts</h2>
         {/* Card others posts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           { posts.filter((a) => post.title !== a.title)
             .map((item, index) => {
-              if(index > 3 ) return null
-              return
+              if(index > 2 ) return null
+              return (
               <PostCard key={index} index={index} post={item}/>
+              )
             })
           }
         </div>
