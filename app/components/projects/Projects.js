@@ -105,8 +105,8 @@ const Projects  = ({ className, itemsPerPage }) => {
             // nextClassName="page-item"
             // nextLinkClassName="page-link"
             breakLabel="..."
-            breakClassName="page-item"
-            breakLinkClassName="page-link"
+            // breakClassName="page-item"
+            // breakLinkClassName="page-link"
             containerClassName="pagination"
             activeClassName="active"
             renderOnZeroPageCount={null}
