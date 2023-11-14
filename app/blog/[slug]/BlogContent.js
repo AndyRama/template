@@ -7,7 +7,7 @@ import { compareDesc, format, parseISO } from 'date-fns';
 
 import { motion } from 'framer-motion'
 import { getMDXComponent } from 'next-contentlayer/hooks'
-import PostCard from './../../components/blog/PostCard';
+import PostCard from '@/app/components/blog/PostCard';
 
 function slugify(str) {
   return str
