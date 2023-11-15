@@ -4,7 +4,7 @@ import Posts from '../components/blog/Posts'
 import Subscribe from '../components/Subscribe'
 
 export const metadata = {
-  title: "Blogs - Lemurian by Andy Ramaroson"
+  title: "Blogs - Lemurian by Andy Ramaroson",
 }
 
 const page = () => {

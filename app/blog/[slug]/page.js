@@ -1,4 +1,5 @@
-import { allPosts } from ".contentlayer/generated";
+import React from "react";
+import { allPosts } from "contentlayer/generated";
 import BlogContent from "./BlogContent"
 
 export async function generateStaticParams() {

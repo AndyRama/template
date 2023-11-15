@@ -1,5 +1,5 @@
 import React from 'react'
-import { allPosts } from '@/.contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
 import Hero from '@/app/components/about/Hero'
 import Posts from '@/app/components/blog/Posts'
 import Subscribe from '@/app/components/Subscribe'
@@ -17,14 +17,15 @@ const page = ({ params }) => {
       .trim()
       .replace(/[^\w\s-]/g, "")
       .replace(/[\s_-]+/g, "-")
-      .replace(/^-+ | -+$/g, "") === params.slug
+      .replace(/^-+|-+$/g, "") === params.slug
     ))
 
     itemsTotal = items.length
   }
   return (
     <>
-      <Hero className="pt-52 pb-24 capitalize" title={`${newTitle} ${itemsTotal}`} subTitle="Category"/>
+      <Hero className="pt-52 pb-24 capitalize" title={`${newTitle} (${itemsTotal})`}
+        subTitle="Category"/>
       <Posts className="pt-0 pb-52" archive={true} params={params} itemsPerPage={6} />
       <Subscribe className="py-16 pt-64 lg:py-32 bg-orange-600"/>
     </>

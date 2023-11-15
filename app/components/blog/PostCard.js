@@ -3,7 +3,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import {format, parseISO} from 'date-fns'
 
 const PostCard = ({ post, index}) => {
   index *= 0.05
@@ -19,7 +18,7 @@ const PostCard = ({ post, index}) => {
         }
       }}
       viewport={ { once: true}}
-      className={`bg-white relative overflow-hidden`}>
+      className={`relative overflow-hidden`}>
       <Link href={post.url} className="relative block overflow-hidden group">
         <Image
           src={post.image}
