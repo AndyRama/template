@@ -2,10 +2,10 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { allPosts } from ".contentlayer/generated";
+import { motion } from 'framer-motion'
+import { allPosts } from "contentlayer/generated";
 import { compareDesc, format, parseISO } from 'date-fns';
 
-import { motion } from 'framer-motion'
 import { getMDXComponent } from 'next-contentlayer/hooks'
 import PostCard from '@/app/components/blog/PostCard';
 
@@ -16,7 +16,6 @@ function slugify(str) {
   .replace(/\s+/g, "-")
   .replace(/-+/g, "-")
 }
-
 
 const BlogContent = ({post}) => {
 
@@ -46,20 +45,15 @@ const BlogContent = ({post}) => {
           {/* Content title post */}
           <h1 className='text-slate-900 text-center text-4xl/none lg:text-6xl/none font-medium'>{ post.title }</h1>
           <p className='text-slate-500 mt-10'>
-            <span className='inline-flex space-x-3'>
-
-              <span>{ format(parseISO(post.date), "LLL d, yyyy") }</span>
-              <span className='mx-3'>•</span>
-              {post.categories?.map((category, index) => (
-                <Link href={`/blog/categories/${slugify(category.title)}`}
-                  key={category.title} className='font-medium'>
-                    {category.title}
-                    {index <post.categories.length - 1? `,` : ``}
-                  </Link>
-              ))}
-
-              <span>{ post.role }</span>
-            </span>
+            <span>{ format(parseISO(post.date), "LLL d, yyyy") }</span>
+            <span className='mx-3'>•</span>
+            {post.categories?.map((category, index) => (
+              <Link href={`/blog/categories/${slugify(category.title)}`}
+                key={category.title} className='font-medium'>
+                  {category.title}
+                  {index < post.categories.length - 1? `,` : ``}
+                </Link>
+            ))}
           </p>
         </div>
 
@@ -76,17 +70,15 @@ const BlogContent = ({post}) => {
         </article>
       </div>
 
-      {/* More posts */}
       <div className="max-w-4xl mx-auto mt-20 lg:mt-32">
         <h2 className='text-2xl text-gray-700 mb-10'> More posts</h2>
+
         {/* Card others posts */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           { posts.filter((a) => post.title !== a.title)
             .map((item, index) => {
               if(index > 2 ) return null
-              return (
-              <PostCard key={index} index={index} post={item}/>
-              )
+              return <PostCard key={index} index={index} post={item}/>
             })
           }
         </div>

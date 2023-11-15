@@ -2,9 +2,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { allPosts } from '@/.contentlayer/generated'
-import ReactPaginate from 'react-paginate'
+import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns';
+import ReactPaginate from 'react-paginate'
+
 import { motion } from 'framer-motion'
 
 const Items = ({ currentItems }) => {
@@ -12,7 +13,7 @@ const Items = ({ currentItems }) => {
     <>
       { currentItems &&
       currentItems.map((post, index) => {
-        index *= 0.5
+        index *= 0.05
         return (
           <motion.div
             initial = {{ opacity: 0, y: 20 }}
@@ -88,7 +89,7 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
           .trim()
           .replace(/[^\w\s-]/g, "")
           .replace(/[\s_-]/g, "-")
-          .replace(/^-+ | -+$/g, "") === params.slug
+          .replace(/^-+|-+$/g, "") === params.slug
       ))
     }
   }
@@ -100,11 +101,11 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
 
     if(clickPaginate === true) {
       setTimeout(function () {
-        ref.current?.scrollIntoView({ block: "start", behavior: "smooth"}, 300)
-        setClickPaginate(false)
-      })
+        ref.current?.scrollIntoView({ block: "start", behavior: "smooth"})
+      }, 300)
+      setClickPaginate(false)
     }
-  }, [setCurrentItems, setPageCount, setClickPaginate, itemOffset, itemsPerPage, clickPaginate, items])
+  }, [ itemOffset, itemsPerPage, items, clickPaginate])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length
