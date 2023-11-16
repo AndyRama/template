@@ -22,9 +22,9 @@ const page = ({ params }) => {
   }
   return (
     <>
-      <Hero className="pt-52 pb-24 capitalize" title={`${newTitle} (${itemsTotal})`}
-        subTitle="Category"/>
-      <Posts className="pt-0 pb-52" archive={true} params={params} itemsPerPage={6} />
+      <Hero className="pt-52 pb-24 capitalize" title={`${newTitle}`}  // (${itemsTotal})
+         subTitle="All categories"/>
+      <Posts className="pt-0 pb-52" archive={true} params={params} itemsPerPage={6}/>
       <Subscribe className="py-16 pt-64 lg:py-32 bg-orange-600"/>
     </>
   )
