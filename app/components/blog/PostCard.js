@@ -6,6 +6,10 @@ import Link from 'next/link'
 
 const PostCard = ({ post, index}) => {
   index *= 0.05
+
+  // Crée une constante avec l'URL sans le préfixe "blog"
+  const urlWithoutBlog = post.url.slice(4);
+
   return (
     <motion.div
       initial = {{ opacity: 0, y: 20 }}
@@ -19,7 +23,7 @@ const PostCard = ({ post, index}) => {
       }}
       viewport={ { once: true}}
       className={`relative overflow-hidden`}>
-      <Link href={post.url} className="relative block overflow-hidden group">
+      <Link href={`/blog/${urlWithoutBlog}`} className="relative block overflow-hidden group">
         <Image
           src={post.image}
           alt={post.title}
@@ -33,7 +37,7 @@ const PostCard = ({ post, index}) => {
       <div className="py-8 px-2 bg-white rounded-md">
         <span className='block mb-1 text-gray-500'>{ post.role }</span>
         <h3 className="mb-4">
-          <Link href={post.url} className="text-2xl leading-none">
+          <Link href={`/blog/${urlWithoutBlog}`} className="text-2xl leading-none">
             {post.title}
           </Link>
         </h3>
