@@ -1,7 +1,7 @@
 import React from 'react'
 import { allPosts } from 'contentlayer/generated'
 import Hero from '@/app/components/about/Hero'
-import Posts from '@/app/components/blog/Posts'
+import Posts from '@/app/components/blog/category/PostCard'
 import Subscribe from '@/app/components/Subscribe'
 
 const page = ({ params }) => {

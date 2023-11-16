@@ -82,6 +82,8 @@ const BlogContent = ({post}) => {
             })
           }
         </div>
+
+        {/* Btn others post */}
         <div className="flex justify-center mt-10">
           <Link href="/blog" className='transition-all duration-300 ease-in-out
             text-[11.5px] tracking-[2px] font-bold uupercase bg-orange-600

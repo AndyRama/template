@@ -23,6 +23,7 @@ const PostCard = ({ post, index}) => {
       }}
       viewport={ { once: true}}
       className={`relative overflow-hidden`}>
+      {/* Image top card */}
       <Link href={`/blog/${urlWithoutBlog}`} className="relative block overflow-hidden group">
         <Image
           src={post.image}
@@ -34,6 +35,7 @@ const PostCard = ({ post, index}) => {
         />
       </Link>
 
+      {/* title - text bottom card */}
       <div className="py-8 px-2 bg-white rounded-md">
         <span className='block mb-1 text-gray-500'>{ post.role }</span>
         <h3 className="mb-4">
