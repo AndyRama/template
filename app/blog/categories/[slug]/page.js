@@ -4,7 +4,6 @@ import Hero from '@/app/components/about/Hero'
 import Posts from '@/app/components/blog/Posts'
 import Subscribe from '@/app/components/Subscribe'
 
-
 const page = ({ params }) => {
 
   const newTitle = params?.slug.replace("-", "")
@@ -19,7 +18,6 @@ const page = ({ params }) => {
       .replace(/[\s_-]+/g, "-")
       .replace(/^-+|-+$/g, "") === params.slug
     ))
-
     itemsTotal = items.length
   }
   return (
