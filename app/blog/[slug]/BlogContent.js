@@ -47,12 +47,23 @@ const BlogContent = ({post}) => {
           <p className='text-slate-500 mt-10'>
             <span>{ format(parseISO(post.date), "LLL d, yyyy") }</span>
             <span className='mx-3'>•</span>
+
+            {/* Content categories post */}
+            {/* {post.categories?.map((category, index) => (
+              <span key={index} className='font-medium'>
+                {category.title}
+                {index < post.categories.length - 1 ? `,` : ``}
+              </span>
+            ))} */}
+
+            {/* Content categories post with redirection*/}
+
             {post.categories?.map((category, index) => (
               <Link href={`/blog/categories/${slugify(category.title)}`}
                 key={category.title} className='font-medium'>
                   {category.title}
-                  {index < post.categories.length - 1? `,` : ``}
-                </Link>
+                  {index < post.categories.length - 1 ? `,` : ``}
+              </Link>
             ))}
           </p>
         </div>
