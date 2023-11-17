@@ -30,7 +30,7 @@ const About = ({ className }) => {
     offset: ['start end', 'end start'],
   })
 
-  const img1 = useTransform(scrollYProgress, [0,1], [ '30%', "-10%"])
+  const img1 = useTransform(scrollYProgress, [0,1], [ '30%', "-20%"])
   const img2 = useTransform(scrollYProgress, [0,1], [ '100%', "100%"])
 
   return (
@@ -50,7 +50,8 @@ const About = ({ className }) => {
                 }
               }}
               viewport={ { once: true}}
-              className="uppercase tracking-[3px] text-[12.5px] mb-5 inline-block text-gray-500">{aboutContent.heading.subTitle}
+              className="uppercase tracking-[3px] text-[12.5px] mb-2 inline-block text-gray-500">
+                {aboutContent.heading.subTitle}
             </motion.span>
           )}
           {/* About - center - Title */}
@@ -66,10 +67,10 @@ const About = ({ className }) => {
                 }
               }}
               viewport={ { once: true}}
-              className="text-2xl lg:text-4xl">{aboutContent.heading.title}
+              className="text-2xl lg:text-4xl">
+                {aboutContent.heading.title}
             </motion.h2>
           )}
-
         </div>
         {/* About - center - Card Image */}
         <div className="lg: flex justify-center">
@@ -101,7 +102,7 @@ const About = ({ className }) => {
               </motion.div>
             </div>
             {/* About - center - title */}
-            <div className='lg:w-6/12'>
+            <div className='lg:w-6/12 mt-10'>
               <motion.h3
                 initial = {{ opacity: 0, y: 10 }}
                 whileInView={{
@@ -144,7 +145,7 @@ const About = ({ className }) => {
                 <Link href="/about" className="transistion-all duration-300
                   ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase
                   bg-orange-600 py-4 px-5 rounded text-white inline-block
-                  hover:bg-white hover:text-orange-600 hover:shadow-2xl mb-5">
+                  hover:bg-white hover:text-orange-600 hover:shadow-2xl">
                   {aboutContent.content.btn.label}
                 </Link>
               </motion.p>

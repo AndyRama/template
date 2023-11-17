@@ -5,9 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc, format, parseISO } from "date-fns";
+import PostCard from "@/app/components/blog/category/PostCard";
 
 import { getMDXComponent } from "next-contentlayer/hooks";
-import PostCard from "@/app/components/blog/PostCard";
 
 function slugify(str) {
   return str
@@ -80,7 +80,7 @@ const BlogContent = ({ post }) => {
                 className="font-medium"
               >
                 {category.title}
-                {index < post.categories.length - 1 ? `,` : ``}
+                {index < post.categories.length - 1 ? `,` : ` `}
               </Link>
             ))}
           </p>
@@ -133,4 +133,3 @@ const BlogContent = ({ post }) => {
 };
 
 export default BlogContent;
-//ok
