@@ -87,7 +87,7 @@ const Projects  = ({ className, itemsPerPage }) => {
   return (
     <section className={`${ className }`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10">
+        <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10 rounded-md">
           <Items currentItems={currentItems}/>
         </div>
 
