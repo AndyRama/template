@@ -3,68 +3,77 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { allPosts } from 'contentlayer/generated'
+import { format, parseISO } from 'date-fns';
 
-const PostCard = (post, index) => {
+
+const PostCard = ({ post, index}) => {
+  index *= 0.05
+
+  // Crée une constante avec l'URL sans le préfixe "blog"
+  const urlWithoutBlog = post.url.slice(4);
+
   return (
-    <div className='container px-4 mx-auto'>
-      <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {allPosts.map((post, index) => {
-        let newCat = [post.categories[0].title]
-        let newCat1 = [post.categories[1].title]
-        const urlWithoutBlog = post.url.slice(4);
+    <motion.div
+      initial = {{ opacity: 0, y: 20 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: index,
+          duration: 0.5,
+        }
+      }}
+      viewport={ { once: true}}
+      className="relative overflow-hidden">
+      {/* Image top card */}
+      <Link href={`${urlWithoutBlog}`} className="relative block overflow-hidden group">
+      {/* <Link href={post.url} className="relative block overflow-hidden group"> */}
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={1064}
+          height={644}
+          className='object-cover object-center h-[400px] !max-w-full duration-300
+            transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'
+        />
+      </Link>
 
-        return (
-          <motion.div
-            key={post.categories[0].title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: index * 0.05,
-                duration: 0.5,
-              }
-            }}
-            viewport={{ once: true }}
-            className={`relative overflow-hidden`}>
-
-            {/* Image top card */}
-            <Link key={newCat}  href={`/blog/${urlWithoutBlog}`} className="relative block overflow-hidden group">
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={1064}
-                height={644}
-                className='object-cover object-center h-[400px] !max-w-full duration-300
-                  transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'
-              />
-            </Link>
-
-
-            {/* title - text bottom card */}
-            <div className="py-8 px-2 bg-white rounded-md ">
-              <Link key={newCat1} href={`/blog/${urlWithoutBlog}`} className="text-2xl leading-none">
-                <span className='block mb-1 text-gray-500'>{post.author}</span>
-                <h3 className="mb-4">
-                    {newCat}
-                </h3>
-              </Link>
-            </div>
-          </motion.div>
-        );
-      })}
-     </div>
-      {/* Btn others post */}
-      <div className="flex justify-center mt-10">
-          <Link href="/blog" className='mb-10 transition-all duration-300 ease-in-out
-            text-[11.5px] tracking-[2px] font-bold uupercase bg-orange-600
-            hover:text-orange-600 py-4 px-5 text-white hover:bg-white hover:shadown-2xl rounded-md'>
-              View All Blog Posts
+      <div className="p-8">
+        <p className='text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
+          { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
+        </p>
+        <h3 className="mb-4">
+          <Link href={`/blog/${urlWithoutBlog}`} className='text-lg leading-none'>
+          {/* <Link href={post.url} className='text-lg leading-none'>
+            {post.title} */}
           </Link>
-        </div>
-    </div>
-  );
+        </h3>
+
+
+        <p>
+          <Link href={`/blog/${urlWithoutBlog}`} className='uppercase text-[12px] tracking-[2px] border-b-2
+            pb-2 inline-block border-orange-600'>
+           {/* <Link href={post.url} className='uppercase text-[12px] tracking-[2px] border-b-2
+            pb-2 inline-block border-orange-600'> */}
+              Read More
+          </Link>
+        </p>
+      </div>
+
+      {/* title - text bottom card */}
+      {/* <div className="py-8 px-2 bg-white rounded-md">
+        <span className='block mb-1 text-gray-500'>{ post.role }</span>
+        <h3 className="mb-4">
+          <Link href={`/blog/${urlWithoutBlog}`} className="text-2xl leading-none">
+            {post.title}
+          </Link>
+        </h3>
+      </div> */}
+
+    </motion.div>
+  )
 }
 
-export default PostCard;
+export default PostCard
+
+// ok

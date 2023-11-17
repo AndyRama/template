@@ -22,7 +22,7 @@ const Items = ({ currentItems }) => {
               y: 0,
               transition: {
                 delay: index,
-                duration: 0.3,
+                duration: 0.3
               }
             }}
             viewport={ { once: true}}
@@ -35,15 +35,14 @@ const Items = ({ currentItems }) => {
                 width={1064}
                 height={644}
                 className='object-cover object-center h-[200px] duration-300
-                  transition-all ease-in-out group-hover:scale-[1.05] rounded--tmd'
-              />
+                  transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'/>
               <div className="p-8">
-                <p className='tex-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
+                <p className='text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
                   { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
                 </p>
 
                 <h3 className="mb-4">
-                  <Link href={post.url} className='tex-lg leading-none'>
+                  <Link href={post.url} className='text-lg leading-none'>
                     { post.title }
                   </Link>
                 </h3>
@@ -82,15 +81,16 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
   } else {
     if(params?.slug) {
       items = allPosts.filter((post) =>
-      post.categories.some(
-        (category) =>
-          category.title
-          .toLowerCase()
-          .trim()
-          .replace(/[^\w\s-]/g, "")
-          .replace(/[\s_-]/g, "-")
-          .replace(/^-+|-+$/g, "") === params.slug
-      ))
+        post.categories.some(
+          (category) =>
+            category.title
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/[\s_-]+/g, "-")
+            .replace(/^-+|-+$/g, "") === params.slug
+        )
+      )
     }
   }
 
@@ -105,7 +105,7 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
       }, 300)
       setClickPaginate(false)
     }
-  }, [ setCurrentItems, setPageCount, setClickPaginate, itemOffset, itemsPerPage, items, clickPaginate])
+  }, [ setCurrentItems, setPageCount, setClickPaginate])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length
@@ -120,8 +120,9 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
       <div className="container px-4 mx-auto">
         <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
           lg:grid-cols-3 gap-10 ">
-          <Items currentItems={currentItems} />
+            <Items currentItems={currentItems} />
         </div>
+
         <div className="lg:w-10/12 mx-auto flex flex-wrap">
           <ReactPaginate
               nextLabel="Next"
@@ -150,3 +151,4 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
 }
 
 export default Posts
+//ok
