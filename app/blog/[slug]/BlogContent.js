@@ -62,17 +62,6 @@ const BlogContent = ({ post }) => {
 
             <span className="mx-3">•</span>
 
-            {/* Content categories post */}
-
-            {/* {post.categories?.map((category, index) => (
-              <span key={index} className='font-medium'>
-                {category.title}
-                {index < post.categories.length - 1 ? `,` : ``}
-              </span>
-            ))} */}
-
-            {/* Content categories post with redirection*/}
-
             {post.categories?.map((category, index) => (
               <Link
                 href={`/blog/categories/${slugify(category.title)}`}
@@ -80,7 +69,7 @@ const BlogContent = ({ post }) => {
                 className="font-medium"
               >
                 {category.title}
-                {index < post.categories.length - 1 ? `,` : ` `}
+                {index < post.categories.length - 1 ? ` | ` : ``}
               </Link>
             ))}
           </p>
