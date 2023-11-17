@@ -11,7 +11,7 @@ import "swiper/css";
 const testimonialContent = {
   heading: {
     title: "When creativity meets developement web",
-    subTitle: "How it work",
+    subTitle: "Testimonial",
   },
   testimonials: [
     {

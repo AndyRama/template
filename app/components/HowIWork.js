@@ -116,7 +116,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.2,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -133,7 +133,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.3,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -152,7 +152,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.6,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -174,14 +174,14 @@ const HowIWork = ({ className }) => {
                     y: 0,
                     transition: {
                       delay: index,
-                      duration:0.5,
+                      duration: 0.5,
                     }
                   }}
                   viewport={ { once: true}}
                   key={step.title}
                   whileHover={{ y: -10, transition: 0.1, }}
                   className='group duration-300 pt-32 pl-10 pr-10 pb-20 bg-white
-                  relative overflow-hidden hover:bg-[#fb9725] hover: shadow-2xl'>
+                  relative overflow-hidden hover:bg-[#fb9725] hover: shadow-2xl  rounded-md'>
                   <span className='text-[200px] inline-block z-[1] font-semibold
                     absolute -top-[120px] opacity-5 left-0 leading-0'>
                       { step.number }

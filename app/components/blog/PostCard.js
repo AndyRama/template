@@ -5,12 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns';
 
-
 const PostCard = ({ post, index}) => {
   index *= 0.05
-
-  // Crée une constante avec l'URL sans le préfixe "blog"
-  const urlWithoutBlog = post.url.slice(4);
 
   return (
     <motion.div
@@ -25,9 +21,9 @@ const PostCard = ({ post, index}) => {
       }}
       viewport={ { once: true}}
       className="relative overflow-hidden">
+
       {/* Image top card */}
-      <Link href={`/blog/${urlWithoutBlog}`} className="relative block overflow-hidden group">
-      {/* <Link href={post.url} className="relative block overflow-hidden group"> */}
+      <Link href={`/${post.url}`} className="relative block overflow-hidden group">
         <Image
           src={post.image}
           alt={post.title}
@@ -43,33 +39,17 @@ const PostCard = ({ post, index}) => {
           { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
         </p>
         <h3 className="mb-4">
-          <Link href={`/blog/${urlWithoutBlog}`} className='text-lg leading-none'>
-          {/* <Link href={post.url} className='text-lg leading-none'>
-            {post.title} */}
+          <Link href={`/${urlWithoutBlog}`} className='text-lg leading-none'>
+            {post.title}
           </Link>
         </h3>
-
-
         <p>
-          <Link href={`/blog/${urlWithoutBlog}`} className='uppercase text-[12px] tracking-[2px] border-b-2
+          <Link href={`/${urlWithoutBlog}`} className='uppercase text-[12px] tracking-[2px] border-b-2
             pb-2 inline-block border-orange-600'>
-           {/* <Link href={post.url} className='uppercase text-[12px] tracking-[2px] border-b-2
-            pb-2 inline-block border-orange-600'> */}
               Read More
           </Link>
         </p>
       </div>
-
-      {/* title - text bottom card */}
-      {/* <div className="py-8 px-2 bg-white rounded-md">
-        <span className='block mb-1 text-gray-500'>{ post.role }</span>
-        <h3 className="mb-4">
-          <Link href={`/blog/${urlWithoutBlog}`} className="text-2xl leading-none">
-            {post.title}
-          </Link>
-        </h3>
-      </div> */}
-
     </motion.div>
   )
 }

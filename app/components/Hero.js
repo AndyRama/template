@@ -123,22 +123,21 @@ const Hero = ({ className }) => {
                 className="z-[2] relative bg-cover bg-center">
                 <Image src="/images/desktop.jpg" width={800} height={985} alt="hero image"/>
               </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{
-                    opacity:1,
-                    x:0,
-                    transition: {
-                      delai: 0.4,
-                      duration:0.5,
-                    }
-                  }}
-                  viewport={ { once: true}}
-                  style={{y: imgScroll2}}
-                  className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1]">
-                  <Image src="/images/dots.svg" width={200} height={200} alt="Dots background image" className="w-64"/>
-                </motion.div>
-
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{
+                  opacity:1,
+                  x:0,
+                  transition: {
+                    delai: 0.4,
+                    duration:0.5,
+                  }
+                }}
+                viewport={ { once: true}}
+                style={{y: imgScroll2}}
+                className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1]">
+                <Image src="/images/dots.svg" width={200} height={200} alt="Dots background image" className="w-64"/>
+              </motion.div>
             </div>
           </div>
       </div>
