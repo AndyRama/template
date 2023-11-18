@@ -59,10 +59,13 @@ export default function Navigation() {
   return (
     <div>
       <header role="banner" className="py-10 absolute w-full z-[3]">
-        <div className="container px-4 3x-auto flex items-center justify-between">
+        <div className="container px-4 mx-auto flex items-center justify-between">
           <div>
-           <Link href="/" className="text-[22px] text-gray-700
-             font-bold">Lemurian Agency<span className="text-orange-600">.</span>
+           <Link
+              href="/"
+              className="text-[22px] text-gray-700 font-bold">
+                Lemurian Agency
+                <span className="text-orange-600">.</span>
             </Link>
           </div>
           <div className="flex">
@@ -77,14 +80,14 @@ export default function Navigation() {
                      before:wil-change-transform hover:before:origin-[100%, 0%]
                      hover:before:scale-x-[1] hover:before:scale-y-[1]
                      hover:before:scale-z-[1] text-[12px] tracking-[2px] uppercase
-                     font-semibold pb-2 ${newPathname == menu.href ? "border-orange-600 before:scale-x-[1]" : " border-transparent" }`}>
+                     font-semibold pb-2 ${newPathname == menu.href ?
+                     "border-orange-600 before:scale-x-[1]" : " border-transparent" }`}>
                       { menu.label}
                   </Link>
                 </li>
               ))}
             </ul>
             <button className="md:hidden text-md" onClick={()=> setOpen(true)}>
-
               {open ? null: <HiMenu />}
             </button>
           </div>
@@ -109,8 +112,7 @@ export default function Navigation() {
               <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                 <Transition.Child
                   as={Fragment}
-                  enter="transform transistion-all ease-in-out duration-500
-                    sm:duration-500"
+                  enter="transform transistion-all ease-in-out duration-500 sm:duration-500"
                   enterForm="translate-x-full"
                   enterTo="translate-x-0"
                   leave="transform transition-all ease-in-out duration-500 sm:duration-500"
@@ -119,7 +121,7 @@ export default function Navigation() {
                   >
                   <Dialog.Panel className="pointer-events-auto w-screen max-w-sm">
                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                      <div className="flex-1 overflow-y-auto px-_ py-6 sm:px-12">
+                      <div className="flex-1 overflow-y-auto px-8 py-6 sm:px-12">
                         <div className="flex items-start justify-between">
                           <Dialog.Title className="text-lg font-medium text-gray-900">
                             Menu
