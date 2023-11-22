@@ -15,7 +15,7 @@ const aboutPage = () => {
       <WhyUs className="pt-52 pb-0"/>
       <Testimonial className="pt-10 lg:pt-44 pb-10 lg:pb-32"/>
       <Team className="py-10 lg:py-32"/>
-      <Subscribe className="py-10 lg:py-32 bg-orange-300"/>
+      <Subscribe className="py-5 lg:py-32 bg-orange-300"/>
     </>
   )
 }

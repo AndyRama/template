@@ -49,7 +49,8 @@ const Items = ({ currentItems }) => {
               </div>
             </motion.div>
           )
-        })}
+        })
+      }
     </>
   )
 }
@@ -73,7 +74,7 @@ const Projects  = ({ className, itemsPerPage }) => {
       ref.current?.scrollIntoView({ top:-50, behavior: "smooth"})
       setClickPaginate(false)
     }
-  }, [itemOffset, itemsPerPage, items, clickPaginate])
+  }, [setCurrentItems, setPageCount, setClickPaginate ,itemOffset, itemsPerPage, clickPaginate, ref, Items])
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length
@@ -86,7 +87,7 @@ const Projects  = ({ className, itemsPerPage }) => {
   return (
     <section className={`${ className }`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10">
+        <div className="lg:w-10/12 mx-auto flex flex-wrap mb-10 rounded-md">
           <Items currentItems={currentItems}/>
         </div>
 
