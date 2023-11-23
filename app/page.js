@@ -4,7 +4,8 @@ import HowIWork from "./components/HowIWork"
 import Testimonial2 from "./components/Testimonial2"
 import RecentBlog from "./components/RecentBlog"
 import Subscribe from "./components/Subscribe"
-import Image from "next/image"
+import Stats from './components/Stats'
+
 export default function Home() {
   return (
     <>

@@ -28,7 +28,14 @@ const PostCard = ({ index, post }) => {
       viewport={{ once: true }}
       className="bg-white relative overflow-hidden group rounded ">
       <Link href={post.url} className="relative block overflow-hidden">
-        <Image src={post.image} alt={post.title} width={1064} height={644} className="object-cover object-center h-[200px] duration-300 transition-all ease-in-out group-hover:scale-[1.1]" />
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={1064}
+          height={644}
+          className="object-cover object-center h-[200px] duration-300
+            transition-all ease-in-out group-hover:scale-[1.1]"
+        />
       </Link>
 
       <div className="p-8">
@@ -42,7 +49,12 @@ const PostCard = ({ index, post }) => {
           </Link>
         </h3>
         <p>
-          <Link href={post.url} className="text-[12px] tracking-[2px] uppercase border-b-2 pb-2 inline-block border-orange-400">Read More</Link>
+          <Link
+            href={post.url}
+            className="text-[12px] tracking-[2px] uppercase border-b-2 pb-2
+            inline-block border-orange-400">
+              Read More
+          </Link>
         </p>
       </div>
     </motion.div>
@@ -69,8 +81,9 @@ const RecentBlog = ({ className }) => {
                   },
                 }}
                 viewport={{ once: true }}
-                className="uppercase tracking-[3px] text-sm mb-5 inline-block text-gray-500">
-                { recentBlogContent.heading.subTitle }
+                className="uppercase tracking-[3px] text-sm mb-5 inline-block
+                 text-gray-500">
+                    { recentBlogContent.heading.subTitle }
               </motion.span>
               )}
               { recentBlogContent.heading.title && (
@@ -109,8 +122,10 @@ const RecentBlog = ({ className }) => {
             </div>
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 w-full lg:w-10/12 mx-auto mt-10 ">
           {posts.slice(0, 3).map((post, index) => (
+
             <PostCard key={index} index={ index} post={post}/>
           ))}
         </div>

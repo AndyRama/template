@@ -16,8 +16,16 @@ const navigationMenu = [
 export default function Navigation() {
   const[open,setOpen]= useState(false)
   const pathname = usePathname()
-  const [] = useState({})
   let newPathname = ''
+
+  newPathname = pathname
+  if(pathname.includes('/blog')) {
+    newPathname ='/blog';
+  } else if(pathname.includes('/projects')) {
+    newPathname ='/projects'
+  }
+
+  const [] = useState({})
 
   let wHeight = null
   let wWidth = null
@@ -51,10 +59,13 @@ export default function Navigation() {
   return (
     <div>
       <header role="banner" className="py-10 absolute w-full z-[3]">
-        <div className="container px-4 3x-auto flex items-center justify-between">
+        <div className="container px-4 mx-auto flex items-center justify-between">
           <div>
-           <Link href="/" className="text-[22px] text-gray-700
-             font-bold">Lemurian Agency<span className="text-orange-600">.</span>
+           <Link
+              href="/"
+              className="text-[22px] text-gray-700 font-bold">
+                Lemurian Agency
+                <span className="text-orange-600">.</span>
             </Link>
           </div>
           <div className="flex">
@@ -69,14 +80,14 @@ export default function Navigation() {
                      before:wil-change-transform hover:before:origin-[100%, 0%]
                      hover:before:scale-x-[1] hover:before:scale-y-[1]
                      hover:before:scale-z-[1] text-[12px] tracking-[2px] uppercase
-                     font-semibold pb-2`}>
+                     font-semibold pb-2 ${newPathname == menu.href ?
+                     "border-orange-600 before:scale-x-[1]" : " border-transparent" }`}>
                       { menu.label}
                   </Link>
                 </li>
               ))}
             </ul>
             <button className="md:hidden text-md" onClick={()=> setOpen(true)}>
-
               {open ? null: <HiMenu />}
             </button>
           </div>
@@ -84,7 +95,7 @@ export default function Navigation() {
       </header>
 
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="realtive z-10" onClose={setOpen}>
+        <Dialog as="div" className="relative z-10" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-in-out duration-500"
@@ -94,74 +105,70 @@ export default function Navigation() {
             leaveForm="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-25
-            transition-opacity"/>
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity"/>
           </Transition.Child>
           <div className="fixed inset-0 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
-              <div className="pointer-events-none fixed inset-y-0 right-0 flex
-                max-w-full pl-10"
-              >
-              <Transition.Child
-                as={Fragment}
-                enter="transform transistion-all ease-in-out duration-500
-                  sm:duration-500"
-                enterForm="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transform transition-all ease-in-out duration-500 sm:duration-500"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <Dialog.Panel className="pointer-events-auto w-screen max-w-sm">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                    <div className="flex-1 overflow-y-auto px-_ py-6 sm:px-12">
-                      <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-gray-900">
-                          Menu
-                        </Dialog.Title>
-                          <div className="ml-3 flex h-7 items-center">
-                            <button
-                              type="button"
-                              className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                              onClick={() => setOpen(false)}>
-                              <span className="absolute -inset-0.5"/>
-                              <span className="sr-only">Close panel</span>
-                              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                            </button>
+              <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                <Transition.Child
+                  as={Fragment}
+                  enter="transform transistion-all ease-in-out duration-500 sm:duration-500"
+                  enterForm="translate-x-full"
+                  enterTo="translate-x-0"
+                  leave="transform transition-all ease-in-out duration-500 sm:duration-500"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                  >
+                  <Dialog.Panel className="pointer-events-auto w-screen max-w-sm">
+                    <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                      <div className="flex-1 overflow-y-auto px-8 py-6 sm:px-12">
+                        <div className="flex items-start justify-between">
+                          <Dialog.Title className="text-lg font-medium text-gray-900">
+                            Menu
+                          </Dialog.Title>
+                            <div className="ml-3 flex h-7 items-center">
+                              <button
+                                type="button"
+                                className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
+                                onClick={() => setOpen(false)}>
+                                <span className="absolute -inset-0.5"/>
+                                <span className="sr-only">Close panel</span>
+                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                              </button>
+                            </div>
+
+                        </div>
+                        <div className="mt-8">
+                          <div className="flow-root">
+                            <ul role="list">
+                              {navigationMenu.map((menu, index) => (
+                                <li key={menu.label}>
+                                  <Link
+                                    href={menu.href}
+                                    className="py-2 inline-block">
+                                      {menu.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           </div>
-
-                      </div>
-                      <div className="mt-8">
-                        <div className="flow-root">
-                          <ul role="list">
-                            {navigationMenu.map((menu, index) => (
-                               <li key={menu.label}>
-                                <Link href={menu.href} className="py-2 inline-block">{menu.label}</Link>
-                               </li>
-
-                            ))}
-                          </ul>
                         </div>
                       </div>
-                    </div>
                       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
 
                         <div>
                           <Link href="/contact" className="block text-center text-[11.5px]
-                            tracking-2[2px] font-bold uppercase bg-orange-600 py-4 px-5 text-white">
+                            tracking-2[2px] font-bold uppercase bg-orange-600 py-4 px-5 text-white rounded-md">
                             Contact us now
                           </Link>
-
                         </div>
                       </div>
-                  </div>
-                </Dialog.Panel>
-
-            </Transition.Child>
+                    </div>
+                  </Dialog.Panel>
+                </Transition.Child>
               </div>
             </div>
           </div>
-
         </Dialog>
       </Transition.Root>
     </div>

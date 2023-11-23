@@ -30,13 +30,14 @@ const About = ({ className }) => {
     offset: ['start end', 'end start'],
   })
 
-  const img1 = useTransform(scrollYProgress, [0,1], [ '30%', "-10%"])
+  const img1 = useTransform(scrollYProgress, [0,1], [ '30%', "-20%"])
   const img2 = useTransform(scrollYProgress, [0,1], [ '100%', "100%"])
 
   return (
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
         <div className="text-center lg:max-w-xl mx-auto mb-20 lg:mb-22 relative z-[5]">
+          {/* About - center - Subtitle */}
           {aboutContent.heading.subTitle && (
             <motion.span
               initial={{ opacity:0 , y: 20 }}
@@ -49,9 +50,11 @@ const About = ({ className }) => {
                 }
               }}
               viewport={ { once: true}}
-              className="uppercase tracking-[3px] text-[12.5px] mb-5 inline-block text-gray-500">{aboutContent.heading.subTitle}
+              className="uppercase tracking-[3px] text-[12.5px] mb-2 inline-block text-gray-500">
+                {aboutContent.heading.subTitle}
             </motion.span>
           )}
+          {/* About - center - Title */}
           {aboutContent.heading.title && (
             <motion.h2
               initial={{ opacity: 0 , y: 20 }}
@@ -64,11 +67,12 @@ const About = ({ className }) => {
                 }
               }}
               viewport={ { once: true}}
-              className="text-2xl lg:text-4xl">{aboutContent.heading.title}
+              className="text-2xl lg:text-4xl">
+                {aboutContent.heading.title}
             </motion.h2>
           )}
-
         </div>
+        {/* About - center - Card Image */}
         <div className="lg: flex justify-center">
           <div className="lg:w-8/12 lg:flex gap-20 items-center">
             <div className="mb-7 lg:mb-0 lg:w-6/12 lg:order-2 relative">
@@ -97,8 +101,8 @@ const About = ({ className }) => {
                 />
               </motion.div>
             </div>
-
-            <div className='lg:w-6/12'>
+            {/* About - center - title */}
+            <div className='lg:w-6/12 mt-10'>
               <motion.h3
                 initial = {{ opacity: 0, y: 10 }}
                 whileInView={{
@@ -112,7 +116,7 @@ const About = ({ className }) => {
                 viewport={ { once: true}}
                 className="text-2xl mb-7 text-gray-800">{aboutContent.content.title}
               </motion.h3>
-
+              {/* About - center - block text */}
               <motion.p
                 initial = {{ opacity: 0, y: 10 }}
                 whileInView={{
@@ -141,7 +145,7 @@ const About = ({ className }) => {
                 <Link href="/about" className="transistion-all duration-300
                   ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase
                   bg-orange-600 py-4 px-5 rounded text-white inline-block
-                  hover:bg-white hover:text-orange-600 hover:shadow-2xl mb-5">
+                  hover:bg-white hover:text-orange-600 hover:shadow-2xl">
                   {aboutContent.content.btn.label}
                 </Link>
               </motion.p>
