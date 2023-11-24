@@ -171,7 +171,7 @@ const Testimonial2 = () => {
                       </blockquote>
                     </div>
                   </div>
-                  <div className="hidden md:inline-block w-10 h-10 lg:w-24 lg:h-24 bg-orange-300 rounded-md rounded-bl-[180px]"></div>
+                  <div className="hidden md:inline-block w-10 h-10 lg:w-24 lg:h-24 bg-orange-300 rounded-md rounded-br-[180px]"></div>
                 </div>
               </div>
             </div>
