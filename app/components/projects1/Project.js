@@ -2,9 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { allPosts } from 'contentlayer/generated'
+import { allProjects } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns';
-import ReactPaginate from 'react-paginate'
+// import ReactPaginate from 'react-paginate'
 
 import { motion } from 'framer-motion'
 
@@ -12,43 +12,43 @@ const Items = ({ currentItems }) => {
   return (
     <>
       { currentItems &&
-        currentItems.map((post, index) => {
+        currentItems.map((project, index) => {
           index *= 0.05
           return (
             <motion.div
-              initial = {{ opacity: 0, y: 20 }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: index,
-                  duration: 0.3
+            initial = {{ opacity: 0, y: 20 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: index,
+                duration: 0.3
                 }
               }}
               viewport={ { once: true}}
               className='bg-white relative overflow-hidden group rounded-md'
-              key={post.title}>
-              <Link href={`/${post.url}`} className='relative block overflow-hidden'>
+              key={project.title}>
+              <Link href={`/${project.url}`} className='relative block overflow-hidden'>
                 <Image
-                  src={post.image}
-                  alt={post.title}
+                  src={project.image}
+                  alt={project.title}
                   width={1064}
                   height={644}
                   className='object-cover object-center h-[200px] duration-300
                     transition-all ease-in-out group-hover:scale-[1.05] rounded-t-md'/>
                 <div className="p-8">
                   <p className='text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]'>
-                    { format(parseISO(post.date), "LLL d, yyyy")} • { post.author}
+                    { format(parseISO(project.date), "LLL d, yyyy")} • { project.author}
                   </p>
 
                   <h3 className="mb-4">
-                    <Link href={post.url} className='text-lg leading-none'>
-                      { post.title }
+                    <Link href={project.url} className='text-lg leading-none'>
+                      { project.description }
                     </Link>
                   </h3>
                   <p>
                     <Link
-                      href={post.url}
+                      href={project.url}
                       className={`text-[12px] tracking-[2px] uppercase
                         pb-2 inline-block  duration-300 transistion-all bg-white-600
                         ease-in-out relative before:content-['']
@@ -72,7 +72,7 @@ const Items = ({ currentItems }) => {
     </>
   )
 }
-const Posts = ({ className, itemsPerPage, archive= false, params }) => {
+const Project = ({ className, itemsPerPage, archive= false, params }) => {
 
   const [currentItems, setCurrentItems] = useState(null)
   const [pageCount, setPageCount] = useState(0)
@@ -83,13 +83,13 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
   let items = null
 
   if(archive === false) {
-    items = allPosts.sort((a,b) =>
+    items = allProjects.sort((a,b) =>
       compareDesc(new Date(a.date), new Date(b.date))
     )
   } else {
     if(params?.slug) {
-      items = allPosts.filter((post) =>
-        post.categories.some(
+      items = allProjects.filter((project) =>
+        project.categories.some(
           (category) =>
             category.title
             .toLowerCase()
@@ -131,7 +131,7 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
             <Items currentItems={currentItems} />
         </div>
 
-        <div className="lg:w-10/12 mx-auto flex flex-wrap">
+        {/* <div className="lg:w-10/12 mx-auto flex flex-wrap">
           <ReactPaginate
               nextLabel="Next"
               onPageChange={handlePageClick}
@@ -152,11 +152,11 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
               activeClassName="active"
               renderOnZeroPageCount={null}
             />
-        </div>
+        </div> */}
       </div>
     </section>
   )
 }
 
-export default Posts
+export default Project
 //ok

@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation"
 const navigationMenu = [
   { href:'/', label:'Home'},
   { href:'/projects', label:'Projects'},
+  { href:'/pricing', label:'Pricing'},
   { href:'/blog', label:'Blog'},
   { href:'/about', label:'About'},
   { href:'/contact', label:'Contact'},
@@ -21,6 +22,7 @@ export default function Navigation() {
   newPathname = pathname
   if(pathname.includes('/blog')) {
     newPathname ='/blog';
+
   } else if(pathname.includes('/projects')) {
     newPathname ='/projects'
   }
