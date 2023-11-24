@@ -158,7 +158,7 @@ const Hero = ({ className }) => {
                       />
                     </div>
                   )}
-                  <div className="bg-orange-300 rounded-md rounded-tr-[180px]"></div>
+                  <div className="bg-orange-300 rounded-md rounded-tr-[180px] "></div>
                 </div>
 
                 {heroContent.images.img2 && (
@@ -202,7 +202,7 @@ const Hero = ({ className }) => {
                       className="object-cover h-full w-full rounded-md"
                     />
                   )}
-                  <div className="bg-orange-400 rounded-md rounded-br-[180px]"></div>
+                  <div className="bg-green-200 rounded-md h-[100px] rounded-br-[180px]"></div>
                 </div>
 
               </div>
