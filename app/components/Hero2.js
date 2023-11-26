@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Banner from "./Banner"
 
 const heroContent = {
   intro: {
@@ -114,7 +115,7 @@ const Hero = ({ className }) => {
                   className="transistion-all duration-300 ease-in-out text-[11.5px]
                     tracking-[2px] font-bold uppercase bg-orange-600 py-4 px-5
                     rounded text-white inline-block hover:bg-white hover:text-orange-600
-                    hover:shadow-2xl mb-5 mr-10">
+                    hover:shadow-2xl mb-5 mr-5">
                   {heroContent.intro.btn.label}
                 </Link>
 
