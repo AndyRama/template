@@ -9,8 +9,8 @@ import { usePathname } from "next/navigation"
 const navigationMenu = [
   { href:'/', label:'Home'},
   { href:'/projects', label:'Projects'},
-  { href:'/pricing', label:'Pricing'},
   { href:'/blog', label:'Blog'},
+  { href:'/pricing', label:'Pricing'},
   { href:'/about', label:'About'},
   { href:'/contact', label:'Contact'},
 ]

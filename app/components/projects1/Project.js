@@ -28,7 +28,7 @@ const Items = ({ currentItems }) => {
               viewport={ { once: true}}
               className='bg-white relative overflow-hidden group rounded-md'
               key={project.title}>
-              <Link href={`/${project.url}`} className='relative block overflow-hidden'>
+              <Link href={project.url}  className='relative block overflow-hidden'>
                 <Image
                   src={project.image}
                   alt={project.title}

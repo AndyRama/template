@@ -6,6 +6,7 @@ import { allProjects } from '@/.contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import ReactPaginate from "react-paginate"
 
+
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 

@@ -115,7 +115,7 @@ const Story = () => {
             })}
           </div>
 
-          <div className='w-4/12 space-y-7 mb-7 md:mb-0'>
+          <div className='md:w-4/12 space-y-7 mb-7 md:mb-0'>
             { storyContent.column2.imgs.map((item, index) => {
               index *= 0.5;
               return(

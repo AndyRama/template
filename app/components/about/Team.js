@@ -36,27 +36,6 @@ const teamContent = {
       twitter: "https://twitter.com",
       linkedin: "https://linkedin.com",
     },
-    {
-      images:"/images/person-4-min.jpg",
-      name:"Robert Fox",
-      role:"developer fullstack senior",
-      twitter: "https://twitter.com",
-      linkedin: "https://linkedin.com",
-    },
-    {
-      images:"/images/person-5-min.jpg",
-      name:"Sarah Brown",
-      role:"Web designer",
-      twitter: "https://twitter.com",
-      linkedin: "https://linkedin.com",
-    },
-    {
-      images:"/images/person-6-min.jpg",
-      name:"Mickael Williams",
-      role:"developer fullstack jr",
-      twitter: "https://twitter.com",
-      linkedin: "https://linkedin.com",
-    },
   ]
 }
 

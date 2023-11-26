@@ -6,7 +6,9 @@ import { allPosts } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns';
 import ReactPaginate from 'react-paginate'
 
+
 import { motion } from 'framer-motion'
+import Banner from '../Banner'
 
 const Items = ({ currentItems }) => {
   return (
@@ -124,8 +126,10 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
   if(!items) return null
 
   return (
+    <>
+
     <section className={`${className}`} ref={ref}>
-      <div className="container px-4 mx-auto">
+      <div className="container px-4 mx-auto mt-10">
         <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
           lg:grid-cols-3 gap-10 ">
             <Items currentItems={currentItems} />
@@ -155,6 +159,7 @@ const Posts = ({ className, itemsPerPage, archive= false, params }) => {
         </div>
       </div>
     </section>
+    </>
   )
 }
 
