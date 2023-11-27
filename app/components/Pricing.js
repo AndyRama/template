@@ -21,24 +21,24 @@ const HowIWorkContent = {
     description:"Je vous accompagne dans votre entrainement afin e progresser rapidement et efficacement, Je vous accompagne dans votre entrainement afin e progresser rapidement et efficacement",
   },
   step: [
-    {
-      price: '100€',
-      icon: BiLayer,
-      title: "Pack Trainnig tst",
-      description: {
-        content:"Programme d'entrainement personnalisé en fonction de ta discipline (Foot, Boxe,...)",
-        programme:"Programme de réathlétisation adapté à ta pathologie et ta discipline",
-        suivi:"Suivi entrainement avec correction des mouvements",
-        message:"Messagerie privée 7j/7 sur WhatsApp/ mail",
-        application:"Application Fournie Team Unl",
-        plan:"Plan 100% personnalisé et adapté",
-        bilan:"Bilan toutes les deux semaines"
-      },
-      btn: {
-        href:"/pricing",
-        label:"Choose Plan"
-      }
-    },
+    // {
+    //   price: '100€',
+    //   icon: BiLayer,
+    //   title: "Pack Trainnig tst",
+    //   description: {
+    //     content:"Programme d'entrainement personnalisé en fonction de ta discipline (Foot, Boxe,...)",
+    //     programme:"Programme de réathlétisation adapté à ta pathologie et ta discipline",
+    //     suivi:"Suivi entrainement avec correction des mouvements",
+    //     message:"Messagerie privée 7j/7 sur WhatsApp/ mail",
+    //     application:"Application Fournie Team Unl",
+    //     plan:"Plan 100% personnalisé et adapté",
+    //     bilan:"Bilan toutes les deux semaines"
+    //   },
+    //   btn: {
+    //     href:"/pricing",
+    //     label:"Choose Plan"
+    //   }
+    // },
     {
       price: '100€',
       icon: BiLayer,
@@ -197,7 +197,7 @@ const HowIWork = ({ className }) => {
               </div>
             </div>
           </div>
-          <div className=' grid grid-cols-1 lg:grid-cols-4 gap-4 lg:w-10/12 mx-auto'>
+          <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-10/12 mx-auto'>
             {HowIWorkContent.step.map((step, index) => {
               index *= 0.2
               return (

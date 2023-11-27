@@ -84,7 +84,7 @@ const storyContent = {
   }
 }
 
-const Story = () => {
+const Story = ({ className }) => {
   return (
     <section>
       <div className="container px-4 mx-auto">

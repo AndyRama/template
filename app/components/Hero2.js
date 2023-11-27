@@ -22,9 +22,9 @@ const heroContent = {
     },
   },
   images: {
-    img1: "/images/person-1-min.jpg",
-    img2: "/images/person-2-min.jpg",
-    img3: "/images/person-3-min.jpg",
+    img1: "/images/desktop.jpg",
+    img2: "/images/cahier.jpg",
+    img3: "/images/hero-img-1-min.jpg",
     img4: "/images/person-4-min.jpg",
     img5: "/images/person-5-min.jpg",
   },

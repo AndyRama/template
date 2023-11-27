@@ -1,11 +1,10 @@
 import Hero2 from "./components/Hero2"
 import About from "./components/About"
-import HowIWork from "./components/HowIWork"
+import About1 from "./components/About1"
 import Testimonial2 from "./components/Testimonial2"
 import RecentBlog from "./components/RecentBlog"
 import Subscribe from "./components/Subscribe"
-import Stats from './components/Stats'
-import Pricing from './components//Pricing.js'
+import Pricing from './components/Pricing.js'
 
 import Team from './components/Team'
 
@@ -13,8 +12,8 @@ export default function Home() {
   return (
     <>
       <Hero2 className="pt-32 pb-0 lg-pb:10" />
+      {/* <About1 /> */}
       <About className="py-16 lg:py-32 overflow-hidden"/>
-      {/* <HowIWork className="py-16 !pt-32 lg:py-32"/> */}
       <Pricing className="py-16 lg:py-32" />
       <Team/>
       <Testimonial2 className="py-6 lg:py-32"/>
