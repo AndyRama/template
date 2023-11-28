@@ -1,6 +1,6 @@
 import Hero2 from "./components/Hero2"
 import About from "./components/About"
-import About1 from "./components/About1"
+import App from "./components/App"
 import Testimonial2 from "./components/Testimonial2"
 import RecentBlog from "./components/RecentBlog"
 import Subscribe from "./components/Subscribe"
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero2 className="pt-32 pb-0 lg-pb:10" />
-      {/* <About1 /> */}
+      <App />
       <About className="py-16 lg:py-32 overflow-hidden"/>
       <Pricing className="py-16 lg:py-32" />
       <Team/>

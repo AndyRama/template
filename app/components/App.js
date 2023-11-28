@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const aboutContent = {
+const appContent = {
   heading: {
     title: "Team Jeremy",
     subTitle: "Application"
@@ -23,7 +23,7 @@ const aboutContent = {
   }
 };
 
-const About1 = ({ className }) => {
+const App = ({ className }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -37,8 +37,8 @@ const About1 = ({ className }) => {
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
         <div className="text-center lg:max-w-xl mx-auto mb-20 lg:mb-22 relative z-[5] ">
-          {/* About - center - Subtitle */}
-          {aboutContent.heading.subTitle &&
+          {/* Application - center - Subtitle */}
+          {appContent.heading.subTitle &&
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               whileInView={{
@@ -52,10 +52,10 @@ const About1 = ({ className }) => {
               viewport={{ once: true }}
               className="uppercase tracking-[3px] text-[12.5px] mb-2 inline-block text-gray-500"
             >
-              {aboutContent.heading.subTitle}
+              {appContent.heading.subTitle}
             </motion.span>}
-          {/* About - center - Title */}
-          {aboutContent.heading.title &&
+          {/* Application - center - Title */}
+          {appContent.heading.title &&
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{
@@ -67,27 +67,27 @@ const About1 = ({ className }) => {
                 }
               }}
               viewport={{ once: true }}
-              className="text-2xl lg:text-4xl text-white"
+              className="text-2xl lg:text-4xl text-gray-500"
             >
-              {aboutContent.heading.title}
+              {appContent.heading.title}
             </motion.h2>}
         </div>
-        {/* About - center - Card Image */}
+        {/* Application - center - Card Image */}
         <div className="lg: flex justify-center">
           <div className="lg:w-8/12 lg:flex gap-20 items-center">
             <div className="mb-7 lg:mb-0 lg:w-6/12 lg:order-2 relative">
               <motion.div  className="z-[2] relative">
                 <Image
                   src="/images/appUnlpng.png"
-                  className="object-cover
-                  md:!w-[350px] md:!h-[400px] md:px-4 lg:max-w-2xl object-center"
+                  className="object-cover md:!w-[350px] md:px-4 lg:max-w-2xl
+                    object-center pl-20 md:pl-0"
                   width={300}
                   height={400}
                   alt="application web"
                 />
               </motion.div>
             </div>
-            {/* About - center - title */}
+            {/* Application - center - title */}
             <div className="lg:w-6/12 mt-10">
               <motion.h3
                 initial={{ opacity: 0, y: 10 }}
@@ -102,9 +102,9 @@ const About1 = ({ className }) => {
                 viewport={{ once: true }}
                 className="text-4xl mb-7 text-orange-600"
               >
-                {aboutContent.content.title}
+                {appContent.content.title}
               </motion.h3>
-              {/* About - center - block text */}
+              {/* Application - center - block text */}
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{
@@ -116,9 +116,9 @@ const About1 = ({ className }) => {
                   }
                 }}
                 viewport={{ once: true }}
-                className="leading-relaxed mb-14 text-white "
+                className="leading-relaxed mb-14 text-gray-500 "
               >
-                {aboutContent.content.description}
+                {appContent.content.description}
               </motion.p>
               <motion.p
                 initial = {{ opacity: 0, y: 10 }}
@@ -135,11 +135,9 @@ const About1 = ({ className }) => {
                   ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase
                   bg-orange-600 py-4 px-5 rounded text-white inline-block
                   hover:bg-white hover:text-orange-600 hover:shadow-2xl">
-                  {aboutContent.content.btn.label}
+                  {appContent.content.btn.label}
                 </Link>
               </motion.p>
-
-
             </div>
           </div>
         </div>
@@ -147,4 +145,4 @@ const About1 = ({ className }) => {
     </section>
   );
 };
-export default About1;
+export default App;

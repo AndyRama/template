@@ -123,7 +123,7 @@ const RecentBlog = ({ className }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-full lg:w-10/12 mx-auto mt-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full lg:w-10/12 mx-auto mt-10 ">
           {posts.slice(0, 4).map((post, index) => (
 
             <PostCard key={index} index={ index} post={post}/>
