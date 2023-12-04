@@ -51,8 +51,16 @@ const PostCard = ({ index, post }) => {
         <p>
           <Link
             href={post.url}
-            className="text-[12px] tracking-[2px] uppercase border-b-2 pb-2
-            inline-block border-orange-400">
+            className="text-[12px] tracking-[2px] uppercase
+            pb-2 inline-block  duration-300 transistion-all bg-white-600
+            ease-in-out relative before:content-['']
+            before:absolute before:bottom-0 before:left-0 before:w-full
+            before:h-[2px] before:bg-orange-600 before:origin-[100%, 50%]
+            before:transistion-all before:duration-300 before:ease-in-out
+            before:scale-x-0 before:scale-y-[1] before:scale-z[1]
+            before:wil-change-transform hover:before:origin-[100%, 0%]
+            hover:before:scale-x-[1] hover:before:scale-y-[1]
+            hover:before:scale-z-[1]">
               Read More
           </Link>
         </p>
@@ -123,11 +131,12 @@ const RecentBlog = ({ className }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full lg:w-10/12 mx-auto mt-10 ">
-          {posts.slice(0, 4).map((post, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          gap-4 w-full lg:w-10/12 mx-auto mt-10 ">
+            {posts.slice(0, 4).map((post, index) => (
 
-            <PostCard key={index} index={ index} post={post}/>
-          ))}
+              <PostCard key={index} index={ index} post={post}/>
+            ))}
         </div>
 
       </div>

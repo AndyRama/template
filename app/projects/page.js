@@ -4,8 +4,8 @@ import React from 'react'
 import Hero from '../components/about/Hero'
 // import Projects from '../components/projects/Projects'
 import Projects from '../components/projects1/Project'
-
 import CTA from '../components/projects/CTA'
+
 
 export const metadata = {
   title: "Projects - Lemurian by Andy Ramaroson"

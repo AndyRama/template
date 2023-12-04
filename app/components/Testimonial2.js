@@ -5,7 +5,7 @@ import React from "react";
 const testimonialContent = {
   heading: {
     title: "Developement web",
-    subTitle: "How it work",
+    subTitle: "Testimonial",
     description:
       "From heartwarning testimonials to glowing reviews, these voices reflect the trust and confiance our customers place in us. Lettheir words speak volumesabout the experiences that await you with",
     cta: {
@@ -69,7 +69,7 @@ const Testimonial2 = () => {
               <p>
                 <Link
                   href={testimonialContent.heading.cta.cta_href}
-                  className="py-4 px-5 bg-orange-400 text-white rounded-md duration-300
+                  className="py-4 px-5 bg-orange-300 text-white rounded-md duration-300
                 transition-all ease-in-out hover:bg-white hover:shadow-lg inline-block relative top-0 hover:-top-1"
                 >
                   {testimonialContent.heading.cta.cta_label}

@@ -16,9 +16,9 @@ describe('Navigation', () => {
   });
 
   // Renders the navigation menu with a hamburger icon on mobile
-  // it('should render the navigation menu with a hamburger icon on mobile', () => {
-  //   render(<Navigation />);
-  //   expect(screen.getByRole('button', { class: 'md:hidden text-md' })).toBeInTheDocument();
-  // });
+  it('should render the navigation menu with a hamburger icon on mobile', () => {
+    render(<Navigation />);
+    expect(screen.getByRole('button', { class: 'md:hidden text-md' })).toBeInTheDocument();
+  });
 
 });

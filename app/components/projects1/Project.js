@@ -124,6 +124,7 @@ const Project = ({ className, itemsPerPage, archive= false, params }) => {
   if(!items) return null
 
   return (
+    <>
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
         <div className="lg:w-10/12 mx-auto mb-20 grid grid-cols-1 md:grid-cols-2
@@ -155,6 +156,7 @@ const Project = ({ className, itemsPerPage, archive= false, params }) => {
         </div> */}
       </div>
     </section>
+    </>
   )
 }
 
