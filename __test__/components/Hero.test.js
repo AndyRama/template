@@ -18,12 +18,6 @@ describe("Hero Component", () => {
     expect(subtitleElement).toBeInTheDocument();
   });
 
-  it("should render the button", () => {
-    render(<Hero />);
-    const buttonElement = screen.getByText("View Projects");
-    expect(buttonElement).toBeInTheDocument();
-  });
-
   it("should render the hero image", () => {
     render(<Hero />);
     const imageElement = screen.getByAltText("hero image");

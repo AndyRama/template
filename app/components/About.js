@@ -96,8 +96,12 @@ const About = ({ className }) => {
                 viewport={ { once: true}}
                 style={{ y: img2}}
                 className="absolute bottom-0 lg:bottom-[150px] -left-[100px] z-[-1]">
-                <Image src="/images/dots.svg" alt="Dots image" width={200}
-                  height={200} className="w-64"
+                <Image
+                  src="/images/dots.svg"
+                  alt="Dots image"
+                  width={200}
+                  height={200}
+                  className="w-64"
                 />
               </motion.div>
             </div>
@@ -144,7 +148,7 @@ const About = ({ className }) => {
                 viewport={ { once: true}}>
                 <Link href="/about" className="transistion-all duration-300
                   ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase
-                  bg-orange-600 py-4 px-5 rounded text-white inline-block
+                  bg-orange-300 py-4 px-5 rounded text-white inline-block
                   hover:bg-white hover:text-orange-600 hover:shadow-2xl">
                   {aboutContent.content.btn.label}
                 </Link>

@@ -1,20 +1,20 @@
 import React,{ createContext }  from "react";
 import { render, screen } from "@testing-library/react";
 import 'intersection-observer'
-import HowIWork from "@/app/components/HowIWork";
+import Team from "@/app/components/Team";
 
-describe("howIwork Component", () => {
+describe("Team Component", () => {
 
   it("should render the title", () => {
-    render(<HowIWork />);
-    const titleElement = screen.getByText("When creativity meets developement web");
+    render(<Team />);
+    const titleElement = screen.getByText("Team Jeremy");
     expect(titleElement).toBeInTheDocument();
   });
 
 
   it("should render the subtitle", () => {
-    render(<HowIWork />);
-    const subtitleElement = screen.getByText("ABOUT ME");
+    render(<Team />);
+    const subtitleElement = screen.getByText(/ABOUT ME*/);
     expect(subtitleElement).toBeInTheDocument();
   });
 

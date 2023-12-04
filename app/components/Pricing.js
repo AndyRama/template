@@ -236,8 +236,27 @@ const HowIWork = ({ className }) => {
                          border-b-[1px] border-spacing-[7px]'>
                           { step.title}
                       </h3>
+                      <ul className="role-list marker:text-orange-400 list-disc pl-5 space-y-3 text-white mb-5">
+                        <li className="list-none text-center text-orange-400 mb-5 mt-5">
+                          {step.price}
+                          <span className="text-white">/mois</span>
+                        </li>
+                        {Object.entries(step.description).map(([key, value], index) => (
+                          <li
+                            key={index}
+                            className={`leading-relaxed text-[15px] text-white mb-5 pb-5
+                              duration-300 transition-all ease-in-out ${
+                                index !== Object.entries(step.description).length - 1
+                                  ? 'border-b-[1px] border-spacing-[7px]'
+                                  : ''
+                              } text-left`}
+                          >
+                            {value}
+                          </li>
+                        ))}
+                      </ul>
 
-                      <ul className role="list" class='marker:text-orange-400 list-disc pl-5 space-y-3 text-white mb-5'  >
+                      {/* <ul className role="list" class='marker:text-orange-400 list-disc pl-5 space-y-3 text-white mb-5'  >
                         <li className='list-none text-center text-orange-400 mb-5 mt-5'>
                           {step.price}
                             <span className='text-white'>/mois</span>
@@ -262,7 +281,7 @@ const HowIWork = ({ className }) => {
                           duration-300 transistion-all ease-in-out border-b-[1px] border-spacing-[7px] text-left'>
                           {step.description.application}
                         </li>
-                      </ul>
+                      </ul> */}
                       <Link
                         href={step.btn.href}
                         className=" ml-15 transistion-all duration-300 ease-in-out text-[11.5px]
