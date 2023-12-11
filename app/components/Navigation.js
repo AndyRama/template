@@ -51,7 +51,7 @@ export default function Navigation() {
   return (
     <div>
       <header role="banner" className="py-10 absolute w-full z-[3]">
-        <div className="container px-4 3x-auto flex items-center justify-between">
+        <div className="container px-4 mx-auto flex items-center justify-between">
           <div>
            <Link href="/" className="text-[22px] text-gray-700
              font-bold">Lemurian Agency<span className="text-orange-600">.</span>
