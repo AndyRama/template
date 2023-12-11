@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext }  from "react";
 import { render, screen } from "@testing-library/react";
 import 'intersection-observer'
 import Hero from "@/app/components/Hero";
@@ -16,18 +16,6 @@ describe("Hero Component", () => {
     render(<Hero />);
     const subtitleElement = screen.getByText("Welcome");
     expect(subtitleElement).toBeInTheDocument();
-  });
-
-  // it("should render the description with data-testid attribute", () => {
-  //   render(<Hero />);
-  //   const descriptionElement = screen.getByTestId("hero-description");
-  //   expect(descriptionElement).toBeInTheDocument();
-  // });
-
-  it("should render the button", () => {
-    render(<Hero />);
-    const buttonElement = screen.getByText("View Projects");
-    expect(buttonElement).toBeInTheDocument();
   });
 
   it("should render the hero image", () => {

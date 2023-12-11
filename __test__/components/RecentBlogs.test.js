@@ -1,5 +1,5 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import React, { createContext }  from 'react';
+import { render, screen } from '@testing-library/react';
 import RecentBlog from '@/app/components/RecentBlog';
 
 describe("Testimonial Component", () => {

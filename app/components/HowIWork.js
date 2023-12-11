@@ -102,6 +102,7 @@ const HowIWorkContent = {
 const HowIWork = ({ className }) => {
   return (
     <>
+      {/* Content left - subtitle */}
       <section className={` ${className}`}>
         <div className='container px-4 mx-auto'>
           <div className='lg:flex justify-center mb-20 lg:mb-36'>
@@ -115,7 +116,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.2,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -132,7 +133,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.3,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -151,7 +152,7 @@ const HowIWork = ({ className }) => {
                       y: 0,
                       transition: {
                         delay: 0.6,
-                        duration:0.5,
+                        duration: 0.5,
                       }
                     }}
                     viewport={ { once: true}}
@@ -173,20 +174,20 @@ const HowIWork = ({ className }) => {
                     y: 0,
                     transition: {
                       delay: index,
-                      duration:0.5,
+                      duration: 0.5,
                     }
                   }}
                   viewport={ { once: true}}
                   key={step.title}
                   whileHover={{ y: -10, transition: 0.1, }}
                   className='group duration-300 pt-32 pl-10 pr-10 pb-20 bg-white
-                  relative overflow-hidden hover:bg-[#fb9725] hover: shadow-2xl'>
+                  relative overflow-hidden hover:bg-orange-200 hover: shadow-2xl  rounded-md'>
                   <span className='text-[200px] inline-block z-[1] font-semibold
                     absolute -top-[120px] opacity-5 left-0 leading-0'>
                       { step.number }
                   </span>
                   <div className='absolute top-10 right-10'>
-                    <span className='text-3xl text-orange-600 duration-300 transition-all
+                    <span className='text-3xl text-orange-200 duration-300 transition-all
                     ease_in_out group-hover:text-white'>
                       <step.icon/>
                     </span>
@@ -226,7 +227,8 @@ const HowIWork = ({ className }) => {
           </div>
         </div>
       </section>
-      <section className="pt-64 lg:pt-60 pb-10 bg-orange-600">
+
+      <section className="pt-64 lg:pt-60 pb-10  bg-orange-300">
         <div className='container px-4 mx-auto'>
           <div className="lg:flex justify-center">
             <div className='w-full lf:w-8/12 flex gap-0 items-center'>

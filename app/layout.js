@@ -14,8 +14,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}> {/* bg-[#f8f3f3] overflow-x-hidden w-full */}
-        <Navigation/>
+      <body className={`${inter.className} bg-[#f8f3f3] overflow-x-hidden w-full`}>
+        <Navigation />
         {children}
         <Footer className="bg-white py-16 md:py-24"/>
       </body>

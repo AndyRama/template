@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform} from "framer-motion"
 
-
 const aboutContent = {
   heading: {
     title: "Blueprinting Tomorrow's Landscape Today",
@@ -39,7 +38,7 @@ const Hero = ({ className , title, subTitle}) => {
               </motion.span>
               )}
 
-              {/* Content cneter - title */}
+              {/* Content center - title */}
               {title && (
                 <motion.h1
                   initial={{opacity: 0, y: 20}}

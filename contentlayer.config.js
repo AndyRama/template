@@ -39,7 +39,7 @@ const Post = defineDocumentType(() => ({
       of: Category,
       description: "the  categories image of the post ",
       required: true,
-    }
+    },
   },
   computedFields: {
     url: {
@@ -99,6 +99,11 @@ const Project = defineDocumentType(() => ({
       type: "string",
       description: "The year of the project",
       require: true,
+    },
+    description: {
+      type: "string",
+      description: "the  description content of the project ",
+      required: true,
     },
   },
   computedFields: {

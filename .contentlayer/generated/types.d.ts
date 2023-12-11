@@ -49,6 +49,8 @@ export type Project = {
   role?: string | undefined
   /** The year of the project */
   year?: string | undefined
+  /** the  description content of the project  */
+  description: string
   /** MDX file body */
   body: MDX
   url: string
