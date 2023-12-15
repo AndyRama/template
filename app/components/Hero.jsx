@@ -9,7 +9,7 @@ const heroContent = {
   intro: {
     title: "Creation & développement web par Lemurian Agency",
     subTitle: "Welcome",
-    description: "Je suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes. Je suis spécialisé sur le langage  JavaScript avec le framework React & NextJs.",
+    description: "Je  suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes pour repondre à vos besoins. Je suis spécialisé sur le langage  JavaScript, et plus précisément le framework React & NextJs.",
     btn: {
       href:"/projects",
       label: "les Projets"

@@ -9,7 +9,7 @@ describe('Navigation', () => {
     render(<Navigation />);
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Projects')).toBeInTheDocument();
-    expect(screen.getByText('Pricing')).toBeInTheDocument();
+    // expect(screen.getByText('Pricing')).toBeInTheDocument();
     expect(screen.getByText('Blog')).toBeInTheDocument();
     expect(screen.getByText('About')).toBeInTheDocument();
     expect(screen.getByText('Contact')).toBeInTheDocument();

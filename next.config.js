@@ -5,6 +5,6 @@ const nextConfig = {}
 module.exports = withContentlayer(nextConfig)
 
 module.exports = {
-  swcMinify: false,
-  // other configurations...
+  // swcMinify: false,
+  // babelPreset: 'next/babel',
 };

@@ -20,10 +20,10 @@ export default function Navigation() {
   let newPathname = ''
 
   newPathname = pathname
-  if(pathname.includes('/blog')) {
+  if(pathname && pathname.includes('/blog')) {
     newPathname ='/blog';
 
-  } else if(pathname.includes('/projects')) {
+  } else if(pathname && pathname.includes('/projects')) {
     newPathname ='/projects'
   }
 
