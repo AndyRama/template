@@ -35,7 +35,7 @@ const footerContent = {
       heading: "Company",
       links: [
         {
-          href: "#",
+          href: "/about",
           label: "About us",
         },
         {
@@ -121,9 +121,9 @@ const Copyright = () => {
             </div>
 
             <div className="md:w-8/12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+              <div className="grid grid-cols-3 md:grid-cols-3">
                 {footerContent.footerLinks.map((item, index) => (
-                  <div className="mb-10 md:mb-0" key={item.heading}>
+                  <div className="mb-5 md:mb-0" key={item.heading}>
                     <h3 className="text-gray-800 mb-3 ,n=3">{item.heading}</h3>
                     <ul className="list-none">
                       {item.links.map((link, index) => (
@@ -141,7 +141,7 @@ const Copyright = () => {
                                 <span
                                   className="py-0.5 px-2 rounded-full bg-orange-100
                                     border border-orange-600 text-[10px] text-orange-600
-                                    font-semibold"
+                                    font-semibold invisible sm:visible"
                                 >
                                   {link.badge}
                                 </span>

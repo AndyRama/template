@@ -146,6 +146,7 @@ const Hero = ({ className }) => {
                   />
                 )}
               </div>
+              {/* Image right */}
               <div className="w-4/12 self-end space-y-2">
                 <div className="grid grid-cols-2 gap-2">
                   {heroContent.images.img2 && (

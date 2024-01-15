@@ -59,44 +59,44 @@ const HowIWorkContent = {
       }
     },
   ],
-  features: [
-    {
-      icon: BiHardHat,
-      title: "Design developement",
-      description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
-      btn: {
-        href: "#",
-        label: "Learn More"
-      }
-    },
-    {
-      icon: BiNote,
-      title: "Production",
-      description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
-      btn: {
-        href: "#",
-        label: "Learn More"
-      }
-    },
-    {
-      icon: BiLayer,
-      title: "Schema design",
-      description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
-      btn: {
-        href: "#",
-        label: "Learn More"
-      }
-    },
-    {
-      icon: BiPaintRoll,
-      title: "Design developement",
-      description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
-      btn: {
-        href: "#",
-        label: "Learn More"
-      }
-    },
-  ]
+  // features: [
+  //   {
+  //     icon: BiHardHat,
+  //     title: "Design developement",
+  //     description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
+  //     btn: {
+  //       href: "#",
+  //       label: "Learn More"
+  //     }
+  //   },
+  //   {
+  //     icon: BiNote,
+  //     title: "Production",
+  //     description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
+  //     btn: {
+  //       href: "#",
+  //       label: "Learn More"
+  //     }
+  //   },
+  //   {
+  //     icon: BiLayer,
+  //     title: "Schema design",
+  //     description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
+  //     btn: {
+  //       href: "#",
+  //       label: "Learn More"
+  //     }
+  //   },
+  //   {
+  //     icon: BiPaintRoll,
+  //     title: "Design developement",
+  //     description: "Nous nous spécialisons dans la création d'applications web sur-mesure, destinées à optimiser le quotidien de nos clients. Le gain de temps, l'efficacité et la personnalisation sont les maîtres mots !",
+  //     btn: {
+  //       href: "#",
+  //       label: "Learn More"
+  //     }
+  //   },
+  // ]
 }
 
 const HowIWork = ({ className }) => {
@@ -228,7 +228,7 @@ const HowIWork = ({ className }) => {
         </div>
       </section>
 
-      <section className="pt-64 lg:pt-60 pb-10  bg-orange-300">
+      {/* <section className="pt-64 lg:pt-60 pb-10  bg-orange-300">
         <div className='container px-4 mx-auto'>
           <div className="lg:flex justify-center">
             <div className='w-full lf:w-8/12 flex gap-0 items-center'>
@@ -285,7 +285,7 @@ const HowIWork = ({ className }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

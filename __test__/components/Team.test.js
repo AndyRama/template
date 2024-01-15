@@ -14,7 +14,7 @@ describe("Team Component", () => {
 
   it("should render the subtitle", () => {
     render(<Team />);
-    const subtitleElement = screen.getByText(/ABOUT ME*/);
+    const subtitleElement = screen.getByText(/About me*/);
     expect(subtitleElement).toBeInTheDocument();
   });
 

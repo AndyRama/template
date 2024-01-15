@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Hero from '../components/about/Hero'
@@ -19,7 +18,7 @@ const page = () => {
       <CTA
         className="py-32 lg:py-32 bg-orange-600"
         cta_label="Get in touch"
-        cta_link="contact/"
+        cta_link="https://calendly.com/lemurian-agency/30min"
         title="Do you have project in mind ?"
         description="After making these adjustments, try running your tests again.
           If the issues persist, review the Jest documentation and the documentation."
