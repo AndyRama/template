@@ -9,20 +9,22 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 const aboutContent = {
   heading: {
     title:'Mon expertise',
-    subTitle: "About Me"
+    subTitle: "Développement"
   },
   content: {
     img:"/images/hero-img-1-min.jpg",
-    title: "Architects of Inovation, Builders of Beauty  web application",
+    // title: "Architects of Inovation, Builders of Beauty  web application",
     description: "Je réalise depuis plus de 2 ans des outils sur-mesure à destination d'entreprises de toutes tailles. Je transforme chaque besoin de mes clients en solution web, en garantissant le respect de leurs règles métiers.",
-    btn: {
-      href: "/about",
-      label: "Learn about me"
-    }
+    description2: "Je réalise depuis plus de 2 ans des outils sur-mesure à destination d'entreprises de toutes tailles. Je transforme chaque besoin de mes clients en solution web, en garantissant le respect de leurs règles métiers.",
+    description3: "Je réalise depuis plus de 2 ans des outils sur-mesure à destination d'entreprises de toutes tailles. Je transforme chaque besoin de mes clients en solution web, en garantissant le respect de leurs règles métiers.",
+    // btn: {
+    //   href: "/about",
+    //   label: "Learn about me"
+    // }
   },
 }
 
-const About = ({ className }) => {
+const Expertise = ({ className }) => {
 
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -30,13 +32,13 @@ const About = ({ className }) => {
     offset: ['start end', 'end start'],
   })
 
-  const img1 = useTransform(scrollYProgress, [0,1], [ '30%', "-50%"])
+  const img1 = useTransform(scrollYProgress, [0,1], [ '20%', "-20%"])
   const img2 = useTransform(scrollYProgress, [0,1], [ '100%', "100%"])
 
   return (
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
-        <div className="text-center lg:max-w-xl mx-auto mb-20 lg:mb-22 relative z-[5]">
+        <div className="text-center lg:max-w-xl mx-auto mb-15 mt-10 md:mt-0 lg:mb-22 relative z-[5]">
 
           {/* About - center - Subtitle */}
           {aboutContent.heading.subTitle && (
@@ -98,7 +100,7 @@ const About = ({ className }) => {
                 }}
                 viewport={ { once: true}}
                 style={{ y: img2}}
-                className="absolute bottom-0 lg:bottom-[150px] -left-[100px] z-[-1]">
+                className="absolute bottom-0 lg:bottom-[150px] -left-[100px] z-[-1] invisible md:visible">
                 <Image
                   src="/images/dots.svg"
                   alt="Dots image"
@@ -122,10 +124,12 @@ const About = ({ className }) => {
                   }
                 }}
                 viewport={ { once: true}}
-                className="text-2xl mb-7 text-gray-800">{aboutContent.content.title}
+                className="text-2xl mb-7 text-gray-800">
+                  {aboutContent.content.title}
               </motion.h3>
 
               {/* About - center - block text */}
+
               <motion.p
                 initial = {{ opacity: 0, y: 10 }}
                 whileInView={{
@@ -140,23 +144,37 @@ const About = ({ className }) => {
                 className="leading-relaxed mb-14 text-gray-500">
                 {aboutContent.content.description}
               </motion.p>
+
+              {/* About - center - block text 2 */}
+
               <motion.p
                 initial = {{ opacity: 0, y: 10 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
                   transition: {
-                    delay: 0.5,
+                    delay: 0.4,
                     duration:0.5,
                   }
                 }}
-                viewport={ { once: true}}>
-                <Link href="/about" className="transistion-all duration-300
-                  ease-in-out text-[11.5px] tracking-[2px] font-bold uppercase
-                  bg-orange-300 py-4 px-5 rounded text-white inline-block
-                  hover:bg-white hover:text-orange-600 hover:shadow-2xl">
-                  {aboutContent.content.btn.label}
-                </Link>
+                viewport={ { once: true}}
+                className="leading-relaxed mb-14 text-gray-500">
+                {aboutContent.content.description2}
+              </motion.p>
+
+              <motion.p
+                initial = {{ opacity: 0, y: 10 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    delay: 0.4,
+                    duration:0.5,
+                  }
+                }}
+                viewport={ { once: true}}
+                className="leading-relaxed mb-14 text-gray-500">
+                {aboutContent.content.description2}
               </motion.p>
             </div>
 
@@ -166,4 +184,4 @@ const About = ({ className }) => {
     </section>
   )
 }
-export default About
+export default Expertise

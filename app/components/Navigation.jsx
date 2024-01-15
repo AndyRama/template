@@ -71,7 +71,7 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="flex">
-            <ul role="list" className="hidden md:flex space-x-8">
+            <ul role="list" className="hidden space-x-8">
               { navigationMenu.map((menu, index) => (
                 <li key={menu.label}>
                   <Link href={menu.href} className={`relative before:content-['']
@@ -89,8 +89,8 @@ export default function Navigation() {
                 </li>
               ))}
             </ul>
-            <button className="md:hidden text-md" onClick={()=> setOpen(true)}>
-              {open ? null: <HiMenu />}
+            <button className=" text-sm" onClick={()=> setOpen(true)}>
+              {open ? null: <HiMenu className="text-[24px]"/>}
             </button>
           </div>
         </div>
@@ -156,12 +156,13 @@ export default function Navigation() {
                           </div>
                         </div>
                       </div>
+
                       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
 
                         <div>
-                          <Link href="/contact" className="block text-center text-[11.5px]
-                            tracking-2[2px] font-bold uppercase bg-orange-600 py-4 px-5 text-white rounded-md">
-                            Contact us now
+                          <Link href="https://calendly.com/lemurian-agency/30min" className="block text-center text-[11.5px]
+                            tracking-2[2px] font-bold uppercase bg-orange-300 py-4 px-5 text-white rounded-md">
+                            Me Contacter
                           </Link>
                         </div>
                       </div>

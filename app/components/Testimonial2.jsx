@@ -39,7 +39,7 @@ const testimonialContent = {
 };
 const Testimonial2 = () => {
   return (
-    <section className="py-20 bl-light">
+    <section className="mt-48 sm:mt-22 py-20 bl-light">
       <div className="container px-4 mx-auto">
         <div className="lg:flex justify-between items-center">
           <div className="lg:w-4/12 lg:pr-24 mb-10 lg:mb-0">

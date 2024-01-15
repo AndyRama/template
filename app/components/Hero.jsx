@@ -7,12 +7,16 @@ import { motion, useScroll, useTransform} from "framer-motion"
 
 const heroContent = {
   intro: {
-    title: "Creation & développement web par Lemurian Agency",
-    subTitle: "Welcome",
+    title: "Création & développement web par Lemurian Agency",
+    // subTitle: "Bienvenue",
     description: "Je  suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes pour repondre à vos besoins. Je suis spécialisé sur le langage  JavaScript, et plus précisément le framework React & NextJs.",
     btn: {
       href:"/projects",
       label: "les Projets"
+    },
+    btn1: {
+      href:"/contact",
+      label: "Me contacter"
     }
   }
 }
@@ -24,14 +28,14 @@ const Hero = ({ className }) => {
     offset: ['start end', 'end start']
   })
 
-  const imgScroll1 = useTransform(scrollYProgress, [0,1], ['20%', '-20%'])
+  const imgScroll1 = useTransform(scrollYProgress, [0,1], ['30%', '-10%'])
   const imgScroll2 = useTransform(scrollYProgress, [0,1], ['100%', '50%'])
 
   return (
     <section className={`${className}`} ref={ref}>
       <div className="container px-4 mx-auto">
         <div className="lg:flex w-full lg:w-12/12 mx-auto h-auto lg:h-screen
-          lg:min-h-[700px] items-center justify-between md:-mt-32">
+          lg:min-h-[700px] items-center justify-between md:-mt-48 md:ml-5">
 
            {/* Content left - subtitle */}
            <div className="lg:w-3/12 z-[3] relative">
@@ -63,7 +67,7 @@ const Hero = ({ className }) => {
                   viewport={{ once: true}}
                   data-testid="hero-title"
                   className=" text-gray-800 text-3xl sm:text-4xl md:text-5xl
-                    lg:text-6xl w-auto lg:w-screen max-w-xl mb-4 md:mb-8">
+                    lg:text-7xl w-auto lg:w-screen max-w-xl mb-4 md:mb-8">
                       { heroContent.intro.title }
                 </motion.h1>
               )}
@@ -106,11 +110,33 @@ const Hero = ({ className }) => {
                   </Link>
                 </motion.btn>
               )}
+
+                {/* btn1 link */}
+
+                {heroContent.intro.btn1.label && (
+                <motion.btn1
+                  initial={{opacity: 0, y:20}}
+                  whileInView ={ {
+                    opacity:1,
+                    y:0,
+                    transition: { delay: 0.2, duration: 0.5 }
+                  }}
+                  viewport={{ once: true}}
+                >
+                  <Link href={heroContent.intro.btn1.href}
+                    className="transistion-all duration-300 ease-in-out text-[11.5px]
+                      tracking-[2px] font-bold uppercase bg-orange-300 py-4 px-5
+                      rounded text-white inline-block hover:bg-white
+                      hover:text-orange-600 hover:shadow-2xl mb-5 ml-2">
+                    {heroContent.intro.btn1.label}
+                  </Link>
+                </motion.btn1>
+              )}
             </div>
 
             {/* Image right */}
 
-            <div className="lg:w-7/12 relative">
+            <div className="lg:w-12/12 relative md:-mt-80 mb-8">
               <motion.div
                 initial={{ opacity: 0, x:20 }}
                 whileInView={{
@@ -123,7 +149,7 @@ const Hero = ({ className }) => {
                 }}
                 viewport={ { once: true}}
                 style={{y: imgScroll1}}
-                className="z-[2] relative bg-cover bg-center ">
+                className="z-[2] relative bg-cover bg-center">
                 <Image
                   src="/images/desktop.jpg"
                   width={800}
@@ -132,6 +158,9 @@ const Hero = ({ className }) => {
                   className="rounded-md"
                 />
               </motion.div>
+
+              {/* Image2 right */}
+
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{
@@ -144,7 +173,7 @@ const Hero = ({ className }) => {
                 }}
                 viewport={ { once: true}}
                 style={{y: imgScroll2}}
-                className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1] ">
+                className="absolute bottom-0 lg:bottom-[100px] -left-[80px] z-[1] invisible md:visible ">
                 <Image
                   src="/images/dots.svg"
                   width={200}
