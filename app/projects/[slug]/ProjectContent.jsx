@@ -35,7 +35,7 @@ const ProjectContent = ({project}) => {
       <div className="mx-auto max-w-4xl">
         <div className='text-center mb-16 max-w-4xl mx-auto'>
           {/* Content title project */}
-          <h1 className='text-slate-900 text-center text-4xl/none lg:text-6xl/none font-medium'>{ project.title }</h1>
+          <h1 className='text-slate-900 text-center text-4xl/none lg:text-5xl/none font-medium'>{ project.title }</h1>
           <p className='text-slate-500 mt-10'>
             <span className='inline-flex space-x-3'>
 

@@ -9,13 +9,13 @@ const heroContent = {
   intro: {
     title: "Création & développement web par Lemurian Agency",
     // subTitle: "Bienvenue",
-    description: "Je  suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes pour repondre à vos besoins. Je suis spécialisé sur le langage  JavaScript, et plus précisément le framework React & NextJs.",
+    description: "Je  suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes pour répondre à votre besoins. Je suis spécialisé sur le langage  JavaScript, et plus précisément le framework React & NextJs.",
     btn: {
       href:"/projects",
       label: "les Projets"
     },
     btn1: {
-      href:"/contact",
+      href:"https://calendly.com/lemurian-agency/30min",
       label: "Me contacter"
     }
   }
@@ -49,7 +49,7 @@ const Hero = ({ className }) => {
                   }}
                   viewport={{ once: true}}
                   className="uppercase tracking-[3px] text-[12.5px]
-                    mb-5 inline-block text-gray-500">
+                    mb-5 inline-block text-gray-500 md:mt-48">
                       { heroContent.intro.subTitle }
                 </motion.span>
               )}
@@ -66,8 +66,8 @@ const Hero = ({ className }) => {
                   }}
                   viewport={{ once: true}}
                   data-testid="hero-title"
-                  className=" text-gray-800 text-3xl sm:text-4xl md:text-5xl
-                    lg:text-7xl w-auto lg:w-screen max-w-xl mb-4 md:mb-8">
+                  className=" text-gray-800 text-3xl sm:text-4xl md:text-4xl
+                    lg:text-5xl w-auto lg:w-screen max-w-xl mb-4 md:mb-8">
                       { heroContent.intro.title }
                 </motion.h1>
               )}
@@ -89,7 +89,7 @@ const Hero = ({ className }) => {
                 </motion.p>
               )}
 
-              {/* btn link */}
+              {/* btn1 link */}
 
               {heroContent.intro.btn.label && (
                 <motion.btn
@@ -111,7 +111,7 @@ const Hero = ({ className }) => {
                 </motion.btn>
               )}
 
-                {/* btn1 link */}
+                {/* btn2 link */}
 
                 {heroContent.intro.btn1.label && (
                 <motion.btn1
@@ -136,7 +136,7 @@ const Hero = ({ className }) => {
 
             {/* Image right */}
 
-            <div className="lg:w-12/12 relative md:-mt-80 mb-8">
+            <div className="lg:w-12/12 relative lg:-mt-80 mb-8">
               <motion.div
                 initial={{ opacity: 0, x:20 }}
                 whileInView={{
@@ -147,15 +147,15 @@ const Hero = ({ className }) => {
                     duration:0.5,
                   }
                 }}
-                viewport={ { once: true}}
+                viewport={{ once: true}}
                 style={{y: imgScroll1}}
                 className="z-[2] relative bg-cover bg-center">
                 <Image
                   src="/images/desktop.jpg"
-                  width={800}
+                  width={700}
                   height={985}
                   alt="hero image desktop"
-                  className="rounded-md"
+
                 />
               </motion.div>
 

@@ -32,14 +32,14 @@ const PostCard = ({ index, post }) => {
           src={post.image}
           alt={post.title}
           width={1064}
-          height={644}
+          height={544}
           className="object-cover object-center h-[200px] duration-300
             transition-all ease-in-out group-hover:scale-[1.1]"
         />
       </Link>
 
-      <div className="p-8">
-        <p className="text-gray-500 mb-3 uppercase text-[12px] tracking-[1px]">
+      <div className="p-6">
+        <p className="text-gray-500 mb-2 uppercase text-[12px] tracking-[1px]">
           { format(parseISO(post.date), "LLL d, yyyy" )} • {post.author}
         </p>
 
@@ -52,7 +52,7 @@ const PostCard = ({ index, post }) => {
           <Link
             href={post.url}
             className="text-[12px] tracking-[2px] uppercase
-            pb-2 inline-block  duration-300 transistion-all bg-white-600
+            inline-block  duration-300 transistion-all bg-white-600
             ease-in-out relative before:content-['']
             before:absolute before:bottom-0 before:left-0 before:w-full
             before:h-[2px] before:bg-orange-600 before:origin-[100%, 50%]
