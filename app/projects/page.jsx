@@ -18,7 +18,7 @@ const page = () => {
       <CTA
         className="py-32 lg:py-32 bg-orange-600"
         cta_label="Get in touch"
-        cta_link="https://calendly.com/lemurian-agency/30min"
+        cta_link="contact/"
         title="Do you have project in mind ?"
         description="After making these adjustments, try running your tests again.
           If the issues persist, review the Jest documentation and the documentation."

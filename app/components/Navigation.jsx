@@ -160,8 +160,12 @@ export default function Navigation() {
                       <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
 
                         <div>
-                          <Link href="https://calendly.com/lemurian-agency/30min" className="block text-center text-[11.5px]
-                            tracking-2[2px] font-bold uppercase bg-orange-300 py-4 px-5 text-white rounded-md">
+                          <Link
+                            href="https://calendly.com/lemurian-agency/30min"
+                            add target="_blank"
+                            className="block text-center text-[11.5px] tracking-2[2px]
+                            font-bold uppercase bg-orange-300 py-4 px-5 text-white
+                            rounded-md">
                             Me Contacter
                           </Link>
                         </div>
