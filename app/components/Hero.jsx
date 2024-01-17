@@ -8,7 +8,7 @@ import { motion, useScroll, useTransform} from "framer-motion"
 const heroContent = {
   intro: {
     title: "Création & développement web par Lemurian Agency",
-    // subTitle: "Bienvenue",
+    subTitle: "Bienvenue",
     description: "Je  suis Andy Ramaroson, un développeur web FullStack JS basée sur Bordeaux (N. Aquitaine, 33) et je réalise tous types de logiciels et d'applications sur mesure en me basant sur des technologies web modernes pour répondre à votre besoins. Je suis spécialisé sur le langage  JavaScript, et plus précisément le framework React & NextJs.",
     btn: {
       href:"/projects",
@@ -124,6 +124,7 @@ const Hero = ({ className }) => {
                   viewport={{ once: true}}
                 >
                   <Link href={heroContent.intro.btn1.href}
+                    add target="_blank"
                     className="transistion-all duration-300 ease-in-out text-[11.5px]
                       tracking-[2px] font-bold uppercase bg-orange-300 py-4 px-5
                       rounded text-white inline-block hover:bg-white

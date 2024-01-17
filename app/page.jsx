@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero className="pt-32 md:pt-22 pb-0 lg-pb:10" />
       {/* <Expertise/> */}
-      <WhyUs className="pt-22 pb-0"/>
+      <WhyUs />
       {/* <About className="py-16 lg:py-32 overflow-hidden"/> */}
       {/* <Pricing className="py-16 lg:py-32" /> */}
       <HowIWork className="py-6 lg:py-32"/>
