@@ -36,12 +36,12 @@ const WhyUs = ({ className }) => {
     offset: ['start end', 'end start']
   })
 
-  const img1 = useTransform(scrollYProgress, [0,1], ['20%', '-30%'])
+  const img1 = useTransform(scrollYProgress, [0,1], ['30%', '-30%'])
 
   return (
     <section className={`${ className }`}>
       <div className="px-4 mx-auto container">
-        <div className="text-center lg:max-w-xl mx-auto ">
+        <div className="text-center lg:max-w-xl mx-auto mb-20 lg:mb-32">
           { WhyUsContent.heading.subTitle && (
             <motion.span
               initial={{opacity: 0, y: 20}}
@@ -85,7 +85,7 @@ const WhyUs = ({ className }) => {
               </motion.div>
             </div>
 
-            <div className="lg:w-6/12  ">
+            <div className="lg:w-6/12 mt-20 ">
               <motion.ul
                 initial={{opacity: 0, y: 10}}
                 whileInView ={ {
