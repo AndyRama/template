@@ -10,7 +10,7 @@ const navigationMenu = [
   { href:'/', label:'Home'},
   { href:'/projects', label:'Projects'},
   { href:'/blog', label:'Blog'},
-  // { href:'/pricing', label:'Pricing'},
+  { href:'/privacies', label:'Privacy'},
   { href:'/about', label:'About'},
   { href:'/contact', label:'Contact'},
 ]
@@ -25,6 +25,9 @@ export default function Navigation() {
 
   } else if(pathname && pathname.includes('/projects')) {
     newPathname ='/projects'
+
+  } else if(pathname && pathname.includes('/privacies')) {
+    newPathname ='/privacies'
   }
 
   const [] = useState({})

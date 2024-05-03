@@ -30,6 +30,28 @@ export type Post = {
   url: string
 }
 
+export type Privacy = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Privacy'
+  /** the title of the post  */
+  title: string
+  /** the description of the post  */
+  excerpt: string
+  /** the date of the post  */
+  date: IsoDateTimeString
+  /** the  featured image of the post  */
+  image: string
+  /** the  author image of the post  */
+  author: string
+  /** the  categories image of the post  */
+  categories: Category[]
+  /** MDX file body */
+  body: MDX
+  url: string
+}
+
 export type Project = {
   /** File path relative to `contentDirPath` */
   _id: string
@@ -72,8 +94,8 @@ export type Category = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Post | Project
-export type DocumentTypeNames = 'Post' | 'Project'
+export type DocumentTypes = Post | Privacy | Project
+export type DocumentTypeNames = 'Post' | 'Privacy' | 'Project'
 
 export type NestedTypes = Category
 export type NestedTypeNames = 'Category'
@@ -82,6 +104,7 @@ export type DataExports = {
   allDocuments: DocumentTypes[]
   allPosts: Post[]
   allProjects: Project[]
+  allPrivacies: Privacy[]
 }
 
 
@@ -102,6 +125,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Post: Post
+  Privacy: Privacy
   Project: Project
 }
 
